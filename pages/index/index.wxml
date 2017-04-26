@@ -1,13 +1,10 @@
 <!--index.wxml-->
-<import src="../../components/msgItem.wxml"/>
-<view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <template is="msgItem" data="{{index:'0',msg:'hello',time:'1.23'}}" >
-  </template>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class="page">
+  <block wx:for="{{tabs}}" wx:key="*this">
+    <view class="view-navbar">
+      <view class="view-navbar-bd" data-index="{{index}}" bindtap="tabSelect">{{item}}</view>
+      <view wx-if="{{currentIndex == index}}" class="view-navbar-line"></view>
+    </view>
+  </block>
+
 </view>
