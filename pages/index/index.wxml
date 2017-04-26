@@ -1,10 +1,15 @@
 <!--index.wxml-->
 <view class="page">
-  <block wx:for="{{tabs}}" wx:key="*this">
-    <view class="view-navbar">
-      <view class="view-navbar-bd" data-index="{{index}}" bindtap="tabSelect">{{item}}</view>
-      <view wx-if="{{currentIndex == index}}" class="view-navbar-line"></view>
-    </view>
-  </block>
+  <view class="navbar">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view class="view-navbar">
+        <view class="view-navbar-bd" data-index="{{index}}" bindtap="tabSelect">{{item}}</view>
+        <view wx-if="{{currentIndex == index}}" class="view-navbar-line"></view>
+      </view>
+    </block>
+  </view>
+  <view class="left-content">
+    <view wx:for="{{lists}}" class="list-content">{{item.name}}</view>
 
+  </view>
 </view>

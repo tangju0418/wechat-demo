@@ -4,6 +4,22 @@ var app = getApp()
 Page({
   data: {
     tabs: ["点餐", "呼叫", "订单","我的"],
+    lists: [
+            {name:'鲁菜1',nub:0},
+            {name:'鲁菜2',nub:0},
+            {name:'鲁菜3',nub:0},
+            {name:'鲁菜4',nub:0},
+            {name:'鲁菜5',nub:0},
+            {name:'鲁菜6',nub:0},
+            {name:'鲁菜7',nub:0},
+            {name:'鲁菜8',nub:0},
+            {name:'鲁菜3',nub:0},
+            {name:'鲁菜4',nub:0},
+            {name:'鲁菜5',nub:0},
+            {name:'鲁菜6',nub:0},
+            {name:'鲁菜7',nub:0},
+            {name:'鲁菜8',nub:0},
+        ],
     currentIndex:0,
     userInfo: {},
   },

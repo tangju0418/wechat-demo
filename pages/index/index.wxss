@@ -1,4 +1,8 @@
 /**index.wxss**/
+.bar{
+  position: fixed;
+  z-index:1;
+}
 .view-navbar{
   display: block;
   float: left;
@@ -18,4 +22,17 @@
   margin-top: -3px;
   width:30px;
   border-bottom:3px solid #ff7f00;
+}
+.left-content{
+  width:88px;
+  position: absolute;
+  top:40px;
+  bottom:50px;
+  background-color:#f9f4f0;
+}
+.list-content{
+  height:45px;
+  line-height: 45px;
+  font-size: 15px;
+  padding-left:16px;
 }
