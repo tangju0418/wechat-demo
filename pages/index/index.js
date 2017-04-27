@@ -6,7 +6,6 @@ Page({
     tabs: ["点餐", "呼叫", "订单","我的"],
     activeIndex: 0,
     sliderOffset: 0,
-    sliderLeft: 0,
     lists: [
             {name:'鲁菜1',nub:0},
             {name:'鲁菜2',nub:0},

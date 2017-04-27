@@ -18,3 +18,13 @@
   width:30px;
   left: calc(12.5% - 15px);
 }
+.weui-tab{
+  position:static;
+}
+.weui-tab__panel{
+  position:absolute;
+  top:40px;
+  bottom:50px;
+  padding:0;
+  width:100%;
+}
