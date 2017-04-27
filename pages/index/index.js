@@ -4,6 +4,9 @@ var app = getApp()
 Page({
   data: {
     tabs: ["点餐", "呼叫", "订单","我的"],
+    activeIndex: 0,
+    sliderOffset: 0,
+    sliderLeft: 0,
     lists: [
             {name:'鲁菜1',nub:0},
             {name:'鲁菜2',nub:0},
@@ -24,11 +27,6 @@ Page({
     userInfo: {},
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad: function () {
     console.log('onLoad')
     var that = this
@@ -40,10 +38,10 @@ Page({
       })
     })
   },
-  tabSelect: function(event){
-    console.log(event.target)
-    this.setData({
-      currentIndex: event.target.dataset.index
-    })
-  }
+  tabClick: function (e) {
+        this.setData({
+            sliderOffset: e.currentTarget.offsetLeft,
+            activeIndex: e.currentTarget.id
+        });
+    }
 })

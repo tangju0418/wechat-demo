@@ -1,38 +1,20 @@
-/**index.wxss**/
-.bar{
-  position: fixed;
-  z-index:1;
-}
-.view-navbar{
-  display: block;
-  float: left;
-  width:25%;
-}
-.view-navbar-bd{
-  text-align:center;
-  color:#4c4c4c;
-  font-size: 15px;
-  background:#fffef9;
+.weui-navbar{
   height:40px;
+  background-color: #fffef9;
+}
+.weui-navbar__item{
+  padding:0;
+}
+.weui-navbar__title{
   line-height:40px;
+  color: #4c4c4c;
+  font-weight: bold;
 }
-.view-navbar-line{
-  display: block;
-  margin: 0 auto;
-  margin-top: -3px;
+.weui-bar__item_on .weui-navbar__title{
+  color:#ff7d00;
+}
+.weui-navbar__slider{
+  background-color:#ff7d00;
   width:30px;
-  border-bottom:3px solid #ff7f00;
-}
-.left-content{
-  width:88px;
-  position: absolute;
-  top:40px;
-  bottom:50px;
-  background-color:#f9f4f0;
-}
-.list-content{
-  height:45px;
-  line-height: 45px;
-  font-size: 15px;
-  padding-left:16px;
+  left: calc(12.5% - 15px);
 }
