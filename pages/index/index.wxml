@@ -13,7 +13,22 @@
       <view class="weui-tab__panel">
         <!--点餐页面-->
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <view class="left-list"></view>
+          <view class="left-list">
+            
+            <view class="weui-cells weui-cells_after-title">
+              <block wx:for="{{lists}}">
+                
+                <view class="weui-cell" data-index="{{item.nub}}" bindtap="selectType">
+                  <view wx:if="{{currentType==item.nub}}" class="left-line"></view>
+                  <view class="weui-cell__bd">{{item.name}}</view>
+          
+                </view>
+              </block>
+              <!--<view class="type-list">
+                <view class="type-content">{{item.name}}</view>
+              </view>-->
+            </view>
+          </view>
           <view class="right-list">
             <view class="right-header"></view>
             <view class="right-content"></view>

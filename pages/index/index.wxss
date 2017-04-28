@@ -60,3 +60,17 @@
   bottom:0;
   width:100%;
 }
+.weui-cell:before{
+  left:5px;
+  right:5px;
+  color:#e6e7e7;
+  border-top:1rpx solid #e6e7e7;
+}
+.left-line{
+  position:absolute;
+  height:16px;
+  width:3px;
+  background-color:#ff7d00;
+  top:calc(50% - 8px);
+  left:0;
+}
