@@ -24,7 +24,39 @@
 .weui-tab__panel{
   position:absolute;
   top:40px;
-  bottom:50px;
+  height:auto;
+  bottom:0;
   padding:0;
+  width:100%;
+}
+.left-list{
+  position:absolute;
+  left:0;
+  width:88px;
+  top:0;
+  bottom:50px;
+  background-color:#f9f4f0;
+  overflow-y: auto;
+}
+.right-list{
+  position: absolute;
+  left:88px;
+  right:0;
+  top:0;
+  bottom:50px;
+  background-color: #fffef9;
+}
+.right-header{
+  height:27px;
+  background-color: #f7f7f7;
+}
+.right-list{
+  overflow-y: auto;
+}
+.footer-content{
+  position: absolute;
+  height:50px;
+  background-color: #f7f7f7;
+  bottom:0;
   width:100%;
 }

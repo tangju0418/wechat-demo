@@ -13,6 +13,12 @@
       <view class="weui-tab__panel">
         <!--点餐页面-->
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class="left-list"></view>
+          <view class="right-list">
+            <view class="right-header"></view>
+            <view class="right-content"></view>
+          </view>
+          <view class="footer-content"></view>
         </view>
 
         <!--呼叫页面-->
