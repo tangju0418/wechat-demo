@@ -23,6 +23,7 @@ Page({
             {name:'鲁菜8',nub:14},
         ],
     currentType:1,
+    currentTypeName:'',
     userInfo: {},
   },
   //事件处理函数
@@ -36,17 +37,21 @@ Page({
         userInfo:userInfo
       })
     })
+    that.setData({
+        currentTypeName: that.data.lists[0].name
+    });
   },
   tabClick: function (e) {
-        this.setData({
-            sliderOffset: e.currentTarget.offsetLeft,
-            activeIndex: e.currentTarget.id
-        })
-    },
+    this.setData({
+        sliderOffset: e.currentTarget.offsetLeft,
+        activeIndex: e.currentTarget.id
+    })
+  },
   selectType:function(e){
     console.log('hiojo',e.currentTarget.dataset)
     this.setData({
-            currentType: e.currentTarget.dataset.index
-        });
+        currentType: e.currentTarget.dataset.index,
+        currentTypeName: e.currentTarget.dataset.name
+    })
   },
 })

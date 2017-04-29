@@ -49,9 +49,14 @@
 .right-header{
   height:27px;
   background-color: #f7f7f7;
+  position:relative;
 }
-.right-list{
+.right-content{
   overflow-y: auto;
+  position:absolute;
+  height:calc(100% - 27px);
+  width:100%;
+  top:27px;
 }
 .footer-content{
   position: absolute;
@@ -73,4 +78,19 @@
   background-color:#ff7d00;
   top:calc(50% - 8px);
   left:0;
+}
+.type-name{
+  color:#b1b1b1;
+  font-size:15px;
+  line-height:27px;
+  padding-left:10px;
+}
+.type-name:before{
+  content: " ";
+  width:3px;
+  height:16px;
+  position:absolute;
+  left:0;
+  top:calc(50% - 8px);
+  background-color:#b1b1b1;
 }
