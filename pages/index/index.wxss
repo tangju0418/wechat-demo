@@ -38,6 +38,15 @@
   bottom:50px;
   background-color:#f9f4f0;
   overflow-y: auto;
+  border-right:1px solid #e6e7e7;
+  box-sizing: border-box;
+}
+.left-cell{
+  background-color:#f9f4f0;
+}
+.left-cell-current{
+  color:#ff7d00;
+  background-color:#fffef9;
 }
 .right-list{
   position: absolute;
@@ -73,7 +82,7 @@
 }
 .weui-cell:before{
   left:5px;
-  right:5px;
+  right:3px;
   color:#e6e7e7;
   border-top:1rpx solid #e6e7e7;
 }

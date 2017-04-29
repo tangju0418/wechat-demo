@@ -16,7 +16,7 @@
           <view class="left-list">
             <view class="weui-cells weui-cells_after-title">
               <block wx:for="{{lists}}" wx:key="*this">     
-                <view class="weui-cell" style="background-color:#f9f4f0" data-index="{{item.nub}}" data-name="{{item.name}}" bindtap="selectType">
+                <view class="weui-cell left-cell {{currentType==item.nub ? 'left-cell-current' : ' '}}"  data-index="{{item.nub}}" data-name="{{item.name}}" bindtap="selectType">
                   <view wx:if="{{currentType==item.nub}}" class="left-line"></view>
                   <view class="weui-cell__bd">{{item.name}}</view>
                 </view>
