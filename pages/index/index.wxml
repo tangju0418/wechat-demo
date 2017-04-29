@@ -14,14 +14,11 @@
         <!--点餐页面-->
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
           <view class="left-list">
-            
             <view class="weui-cells weui-cells_after-title">
-              <block wx:for="{{lists}}">
-                
-                <view class="weui-cell" data-index="{{item.nub}}" data-name="{{item.name}}" bindtap="selectType">
+              <block wx:for="{{lists}}" wx:key="*this">     
+                <view class="weui-cell" style="background-color:#f9f4f0" data-index="{{item.nub}}" data-name="{{item.name}}" bindtap="selectType">
                   <view wx:if="{{currentType==item.nub}}" class="left-line"></view>
                   <view class="weui-cell__bd">{{item.name}}</view>
-          
                 </view>
               </block>
             </view>
@@ -30,7 +27,20 @@
             <view class="right-header">
               <view class="type-name">{{currentTypeName}}</view>
             </view>
-            <view class="right-content"></view>
+            <view class="right-content">
+              <view class="weui-cells weui-cells_after-title weui-cells-right">
+                <view class="weui-cell right-cell" wx:for="{{lists}}" wx:key="*this">
+                  <view class="weui-cell__hd">
+                    <image class="food-img" src="{{userInfo.avatarUrl}}"></image>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <view class="weui-cell-n">北欧海鲜浓汤</view>
+                    <view class="weui-cell-q">月销：1347份</view>
+                    <view class="weui-cell-p">¥34<text class="weui-cell-q">/份</text></view>
+                  </view>
+                </view>
+              </view>
+            </view>
           </view>
           <view class="footer-content"></view>
         </view>

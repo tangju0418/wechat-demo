@@ -1,6 +1,7 @@
 .weui-navbar{
   height:40px;
   background-color: #fffef9;
+  border-bottom:1rpx solid #e6e7e7;
 }
 .weui-navbar__item{
   padding:0;
@@ -50,6 +51,8 @@
   height:27px;
   background-color: #f7f7f7;
   position:relative;
+  border-bottom:1px solid #e6e7e7;
+  box-sizing:border-box;
 }
 .right-content{
   overflow-y: auto;
@@ -57,6 +60,9 @@
   height:calc(100% - 27px);
   width:100%;
   top:27px;
+}
+.weui-cells-right:before{
+  display: none;
 }
 .footer-content{
   position: absolute;
@@ -93,4 +99,34 @@
   left:0;
   top:calc(50% - 8px);
   background-color:#b1b1b1;
+}
+.right-cell{
+  padding:0;
+  background-color:#fffef9;
+}
+.right-cell::before{
+  left:11px;
+  right:0;
+}
+.food-img{
+  height:58px;
+  width:58px;
+  margin: 14px 9px 14px 11px;
+  vertical-align: middle;
+  border-radius:5px;
+}
+.weui-cell-n{
+  font-size:15px;
+  color:#4c4c4c;
+  font-weight:bold;
+}
+.weui-cell-q{
+  font-size:11px;
+  color:#b1b1b1;
+  font-weight: normal;
+}
+.weui-cell-p{
+  font-size:16px;
+  color:#ff5916;
+  font-weight:bold;
 }
