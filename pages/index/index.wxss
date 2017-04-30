@@ -79,8 +79,10 @@
   background-color: #f7f7f7;
   bottom:0;
   width:100%;
+  border-top:1px solid #e6e7e7;
+  box-sizing:border-box;
 }
-.weui-cell:before{
+.left-cell:before{
   left:5px;
   right:3px;
   color:#e6e7e7;
@@ -138,4 +140,17 @@
   font-size:16px;
   color:#ff5916;
   font-weight:bold;
+}
+.icon-content{
+  position:absolute;
+  right:10px;
+  bottom:12px;
+  height:25px;
+}
+.icon-num{
+  display:inline-block;
+  min-width:35px;
+  text-align: center;
+  padding:0 5px;
+  box-sizing: border-box;
 }

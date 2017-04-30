@@ -38,6 +38,11 @@
                     <view class="weui-cell-q">月销：1347份</view>
                     <view class="weui-cell-p">¥34<text class="weui-cell-q">/份</text></view>
                   </view>
+                  <view class="icon-content">
+                    <text class="iconfont icon-jianhao"></text>
+                    <text class="iconfont icon-num">4</text>
+                    <text class="iconfont icon-jiahao"></text>
+                  </view>
                 </view>
               </view>
             </view>
