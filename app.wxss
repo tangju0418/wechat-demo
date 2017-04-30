@@ -21,3 +21,4 @@
 }
 .icon-jiahao:before { content: "\e621"; }
 .icon-jianhao:before { content: "\e622"; }
+.icon-gouwuchekongxin:before { content: "\e602"; }

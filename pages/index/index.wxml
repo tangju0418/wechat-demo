@@ -14,7 +14,7 @@
         <!--点餐页面-->
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
           <view class="left-list">
-            <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cells weui-cells_after-title left-cells">
               <block wx:for="{{lists}}" wx:key="*this">     
                 <view class="weui-cell left-cell {{currentType==item.nub ? 'left-cell-current' : ' '}}"  data-index="{{item.nub}}" data-name="{{item.name}}" bindtap="selectType">
                   <view wx:if="{{currentType==item.nub}}" class="left-line"></view>
@@ -47,7 +47,16 @@
               </view>
             </view>
           </view>
-          <view class="footer-content"></view>
+          <view class="footer-content">
+            <view class="footer-left">
+              <view class="shopping-cart">
+                <view class="iconfont icon-gouwuchekongxin"></view>
+              </view>
+            </view>
+            <view class="footer-right">
+              <view>提交订单</view>
+            </view>
+          </view>
         </view>
 
         <!--呼叫页面-->
