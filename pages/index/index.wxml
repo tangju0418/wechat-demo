@@ -51,6 +51,7 @@
             <view class="footer-left">
               <view class="shopping-cart">
                 <view class="iconfont icon-gouwuchekongxin"></view>
+                <view class="food-num">7</view>
               </view>
             </view>
             <view class="footer-right">

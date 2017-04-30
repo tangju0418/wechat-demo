@@ -1,14 +1,14 @@
 .weui-navbar{
-  height:40px;
+  height:80rpx;
   background-color: #fffef9;
-  border-bottom:1rpx solid #e6e7e7;
+  border-bottom:2rpx solid #e6e7e7;
   box-sizing: border-box;
 }
 .weui-navbar__item{
   padding:0;
 }
 .weui-navbar__title{
-  line-height:40px;
+  line-height:80rpx;
   color: #4c4c4c;
   font-weight: bold;
 }
@@ -17,15 +17,15 @@
 }
 .weui-navbar__slider{
   background-color:#ff7d00;
-  width:30px;
-  left: calc(12.5% - 15px);
+  width:60rpx;
+  left: calc(12.5% - 30rpx);
 }
 .weui-tab{
   position:static;
 }
 .weui-tab__panel{
   position:absolute;
-  top:40px;
+  top:80rpx;
   height:auto;
   bottom:0;
   padding:0;
@@ -35,27 +35,31 @@
 .left-list{
   position:absolute;
   left:0;
-  width:88px;
+  width:176rpx;
   top:0;
-  bottom:50px;
+  bottom:100rpx;
   background-color:#f9f4f0;
   overflow-y: auto;
-  border-right:1px solid #e6e7e7;
+  border-right:2rpx solid #e6e7e7;
   box-sizing: border-box;
-  padding-bottom:20px;
+  padding-bottom:80rpx;
 }
 .left-cells:after,.left-cell:before{
-  left:5px;
-  right:3px;
+  left:10rpx;
+  right:6rpx;
   color:#e6e7e7;
 }
 .left-cells:after{
-  border-bottom:1rpx solid #e6e7e7;
+  border-bottom:2rpx solid #e6e7e7;
 }
 .left-cell::before{
-  border-top:1rpx solid #e6e7e7;
+  border-top:2rpx solid #e6e7e7;
 }
 .left-cell{
+  font-size:30rpx;
+  color:#4c4c4c;
+  line-height:90rpx;
+  padding:0 0 0 32rpx;
   background-color:#f9f4f0;
 }
 .left-cell-current{
@@ -64,59 +68,59 @@
 }
 .right-list{
   position: absolute;
-  left:88px;
+  left:176rpx;
   right:0;
   top:0;
-  bottom:50px;
+  bottom:100rpx;
   background-color: #fffef9;
 }
 .right-header{
-  height:27px;
+  height:54rpx;
   background-color: #f7f7f7;
   position:relative;
-  border-bottom:1px solid #e6e7e7;
+  border-bottom:2rpx solid #e6e7e7;
   box-sizing:border-box;
 }
 .right-content{
   overflow-y: auto;
   position:absolute;
-  height:calc(100% - 27px);
+  height:calc(100% - 54rpx);
   width:100%;
-  top:27px;
+  top:54rpx;
 }
 .weui-cells-right::before,.weui-cells-right::after{
   display: none;
 }
 .footer-content{
   position: absolute;
-  height:50px;
+  height:100rpx;
   background-color: #f7f7f7;
   bottom:0;
   width:100%;
-  border-top:1px solid #e6e7e7;
+  border-top:2rpx solid #e6e7e7;
   box-sizing:border-box;
 }
 .left-line{
   position:absolute;
-  height:16px;
-  width:3px;
+  height:32rpx;
+  width:6rpx;
   background-color:#ff7d00;
-  top:calc(50% - 8px);
+  top:calc(50% - 16rpx);
   left:0;
 }
 .type-name{
   color:#b1b1b1;
-  font-size:15px;
-  line-height:27px;
-  padding-left:10px;
+  font-size:30rpx;
+  line-height:54rpx;
+  padding-left:20rpx;
 }
 .type-name:before{
   content: " ";
-  width:3px;
-  height:16px;
+  width:6rpx;
+  height:32rpx;
   position:absolute;
   left:0;
-  top:calc(50% - 8px);
+  top:calc(50% - 16rpx);
   background-color:#b1b1b1;
 }
 .right-cell{
@@ -124,70 +128,86 @@
   background-color:#fffef9;
 }
 .right-cell::before{
-  left:11px;
+  left:22rpx;
   right:0;
 }
 .food-img{
-  height:58px;
-  width:58px;
-  margin: 14px 9px 14px 11px;
+  height:116rpx;
+  width:116rpx;
+  margin: 28rpx 18rpx 28rpx 22rpx;
   vertical-align: middle;
-  border-radius:5px;
+  border-radius:10rpx;
 }
 .weui-cell-n{
-  font-size:15px;
+  font-size:30rpx;
   color:#4c4c4c;
   font-weight:bold;
 }
 .weui-cell-q{
-  font-size:11px;
+  font-size:22rpx;
   color:#b1b1b1;
   font-weight: normal;
 }
 .weui-cell-p{
-  font-size:16px;
+  font-size:32rpx;
   color:#ff5916;
   font-weight:bold;
 }
 .icon-content{
   position:absolute;
-  right:10px;
-  bottom:12px;
-  height:25px;
+  right:20rpx;
+  bottom:24rpx;
+  height:50rpx;
 }
 .icon-num{
   display:inline-block;
-  min-width:35px;
+  min-width:70rpx;
   text-align: center;
-  padding:0 5px;
+  padding:0 10rpx;
   box-sizing: border-box;
 }
 .footer-right{
-  width:105px;
+  width:210rpx;
   height:100%;
   float:right;
   background:linear-gradient(to right,#ff8d00,#f76219);
 }
 .footer-right view{
-  line-height:50px;
+  line-height:100rpx;
   text-align: center;
-  font-size:17px;
+  font-size:34rpx;
   color:#fff;
   font-weight:bold;
 }
 .shopping-cart{
-  width:66px;
-  height:66px;
+  width:132rpx;
+  height:132rpx;
   border-radius: 50%;
   position:absolute;
   background-color:#fa894f;
-  border:3px solid #fdcf86;
-  bottom:5px;
-  left:5px;
+  border:6rpx solid #fdcf86;
+  bottom:10rpx;
+  left:10rpx;
 }
 .icon-gouwuchekongxin{
   color:#fff;
-  font-size:40px;
-  line-height:66px;
+  font-size:80rpx;
+  line-height:132rpx;
   text-align: center;
+}
+.food-num{
+  position:absolute;
+  right:0;
+  top:0;
+  min-width: 24rpx;
+  height:24rpx;
+  line-height:24rpx;
+  border-radius:24rpx;
+  background-color: #ff4f09;
+  padding:10rpx 10rpx;
+  vertical-align: center;
+  text-align: center;
+  color:#fff;
+  font-size:30rpx;
+  font-weight:bold;
 }
