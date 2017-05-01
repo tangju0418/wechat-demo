@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+var cart = require('../../store/cart.js')
 var app = getApp()
 Page({
   data: {
@@ -40,6 +41,7 @@ Page({
     currentType:1,
     currentTypeName:'',
     userInfo: {},
+    cartItem:cart.Items,
   },
   //事件处理函数
   onLoad: function () {
@@ -63,10 +65,13 @@ Page({
     })
   },
   selectType:function(e){
-    console.log('hiojo',e.currentTarget.dataset)
     this.setData({
         currentType: e.currentTarget.dataset.index,
         currentTypeName: e.currentTarget.dataset.name
     })
   },
+  addToCart:function(e){
+    let food=e.currentTarget.dataset.food
+    cart._product(food)
+  }
 })

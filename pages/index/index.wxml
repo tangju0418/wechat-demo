@@ -41,7 +41,7 @@
                   <view class="icon-content">
                     <text class="iconfont icon-jianhao" wx:if="{{item.Num>0}}"></text>
                     <text class="iconfont icon-num">{{item.Num}}</text>
-                    <text class="iconfont icon-jiahao"></text>
+                    <text class="iconfont icon-jiahao" data-food="{{item}}" bindtap="addToCart"></text>
                   </view>
                 </view>
               </view>
