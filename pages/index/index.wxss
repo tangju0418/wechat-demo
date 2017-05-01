@@ -57,6 +57,7 @@
 }
 .left-cell{
   font-size:30rpx;
+  font-weight: bold;
   color:#4c4c4c;
   line-height:90rpx;
   padding:0 0 0 32rpx;
@@ -210,4 +211,16 @@
   color:#fff;
   font-size:30rpx;
   font-weight:bold;
+}
+.total-price{
+  left:180rpx;
+  position: absolute;
+  right:210rpx;
+  line-height:100rpx;
+  color:#b1b1b1;
+  font-size:30rpx;
+  font-weight: bold;
+}
+.total-price text{
+  color:#ff5916;
 }

@@ -54,6 +54,7 @@
                 <view class="food-num">7</view>
               </view>
             </view>
+            <view class="total-price">合计：<text>¥60</text></view>
             <view class="footer-right">
               <view>提交订单</view>
             </view>
