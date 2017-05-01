@@ -29,18 +29,18 @@
             </view>
             <view class="right-content">
               <view class="weui-cells weui-cells_after-title weui-cells-right">
-                <view class="weui-cell right-cell" wx:for="{{lists}}" wx:key="*this">
+                <view class="weui-cell right-cell" wx:for="{{products}}" wx:key="*this">
                   <view class="weui-cell__hd">
                     <image class="food-img" src="{{userInfo.avatarUrl}}"></image>
                   </view>
                   <view class="weui-cell__bd">
-                    <view class="weui-cell-n">北欧海鲜浓汤</view>
+                    <view class="weui-cell-n">{{item.Name}}</view>
                     <view class="weui-cell-q">月销：1347份</view>
-                    <view class="weui-cell-p">¥34<text class="weui-cell-q">/份</text></view>
+                    <view class="weui-cell-p">¥{{item.Price}}<text class="weui-cell-q">/份</text></view>
                   </view>
                   <view class="icon-content">
-                    <text class="iconfont icon-jianhao"></text>
-                    <text class="iconfont icon-num">4</text>
+                    <text class="iconfont icon-jianhao" wx:if="{{item.Num>0}}"></text>
+                    <text class="iconfont icon-num">{{item.Num}}</text>
                     <text class="iconfont icon-jiahao"></text>
                   </view>
                 </view>
