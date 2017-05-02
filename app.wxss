@@ -1,5 +1,6 @@
 /**app.wxss**/
-@import 'style/weui.wxss';
+@import './libs/weui.wxss';
+@import './libs/wetoast.wxss';
 
 @font-face {
   font-family: 'iconfont';  /* project id 282500 */
