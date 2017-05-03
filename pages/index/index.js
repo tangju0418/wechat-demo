@@ -1,13 +1,16 @@
 //index.js
 //获取应用实例
 const {
+  connect
+} = require('../../store/index.js');
+const {
   addToCart,
   plusToCart,
   minusFromCart,
   cleanCart
 } = require('../../store/modules/cart.actions.js')
 var app = getApp()
-Page({
+const pageConfig = {
   data: {
     tabs: ["点餐", "呼叫", "订单","我的"],
     activeIndex: 0,
@@ -76,7 +79,22 @@ Page({
   },
   addToCart:function(e){
     let food=e.currentTarget.dataset.food
-    dispatch(addToCart(food))
+    this.addToCart(food)
 
   }
+}
+
+const mapStateToData = state => ({
+  cart: state.cart
 })
+
+const mapDispatchToPage = dispatch => ({
+  addToCart: (args) => dispatch(addToCart(args)),
+  plusToCart: (args) => dispatch(plusToCart(args)),
+  minusFromCart: (args) => dispatch(minusFromCart(args)),
+  cleanCart: () => dispatch(cleanCart)
+})
+
+const nextPageConfig = connect(mapStateToData, mapDispatchToPage)(pageConfig)
+Page(nextPageConfig);
+console.log('nextPageConfig', nextPageConfig)

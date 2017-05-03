@@ -10,5 +10,5 @@ const {
 
 module.exports = combineReducers({
   identity: identity,
-  cart: cart,
+  cart: cart
 })

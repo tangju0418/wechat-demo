@@ -1,3 +1,4 @@
+const updeep = require('../libs/updeep.js');
 const cartTypes = {
   ADD_TO_CART: 'ADD_TO_CART',
   PLUS_TO_CART:'PLUS_TO_CART',
@@ -11,14 +12,15 @@ const initial = {
 
 const cart = (state = initial, action) => {
   let record = ''
+  let renew = state
   console.log('购物车：',action)
   const args = action.args
   switch (action.type) {
-    case cartTypes[ADD_TO_CART]:
-        record = state.Items.find(p => p.Id === args.Id)
+    case cartTypes.ADD_TO_CART:
+        record = renew.Items.find(p => p.Id === args.Id)
         console.log('ADD_TO_CART', record)
         if(!record) {
-            state.Items.push({
+            renew.Items.push({
                 Id: args.Id,
                 Name: args.Name,
                 TypeId: args.TypeId,
@@ -33,36 +35,36 @@ const cart = (state = initial, action) => {
         }else{
             record.Num++
         }
-        return state;
         break;
-    case cartTypes[PLUS_TO_CART]:
-        record = state.Items.find(p => p.Id === args.Id)
+    case cartTypes.PLUS_TO_CART:
+        record = renew.Items.find(p => p.Id === args.Id)
         if(record) {
             record.Num++
         }
-        return state;
         break;
-    case cartTypes[MINUS_FROM_CART]:
-        record = state.Items.find(p => p.Id === args.Id)
+    case cartTypes.MINUS_FROM_CART:
+        record = renew.Items.find(p => p.Id === args.Id)
         if(record.Num > 1) {
             record.Num--
         }else if(record){
         let index = 0
-        for (var i = 0; i < state.Items.length; i++) {
-            if(state.Items[i].Id == args.Id){
+        for (var i = 0; i < renew.Items.length; i++) {
+            if(renew.Items[i].Id == args.Id){
             index = i
             break;
             }
         }
-            state.Items.splice(index,1)
+            renew.Items.splice(index,1)
         }
-        return state;
         break;
-    case cartTypes[CLEAN_CART]:
-        state.Items = []
-        return state;
+    case cartTypes.CLEAN_CART:
+        renew.Items = []
         break;
     }
+    if (renew != state)
+    return updeep(renew, state)
+
+  return state
 }   
 
 
