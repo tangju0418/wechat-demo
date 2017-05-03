@@ -51,10 +51,10 @@
             <view class="footer-left">
               <view class="shopping-cart">
                 <view class="iconfont icon-gouwuchekongxin"></view>
-                <view class="food-num">7</view>
+                <view class="food-num">{{ItemsCount}}</view>
               </view>
             </view>
-            <view class="total-price">合计：<text>¥60</text></view>
+            <view class="total-price">合计：<text>¥{{ItemsTotalPrice}}</text></view>
             <view class="footer-right">
               <view>提交订单</view>
             </view>

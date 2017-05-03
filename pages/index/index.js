@@ -80,7 +80,15 @@ const pageConfig = {
 }
 
 const mapStateToData = state => ({
-  cart: state.cart.Items,      
+  cart: state.cart.Items,
+  ItemsCount: state.cart.Items.reduce((count, p) => {
+        return count + (p.Num ? p.Num : 0)
+      }, 0) ,
+  ItemsTotalPrice:
+      state.cart.Items ? state.cart.Items.reduce((count, p) => {
+        return count + (p.Num ? p.Num : 0)*(p.DiscountedPrice ? p.DiscountedPrice : p.Price)
+      }, 0) : 0
+
 })
 
 const mapDispatchToPage = dispatch => ({

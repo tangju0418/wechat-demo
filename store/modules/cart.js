@@ -26,14 +26,13 @@ const initial = {
       {Name:'爆炒腰花',Id:11,Price:28,Unit:'份'},
       {Name:'土豆烧牛肉',Id:12,Price:35,Unit:'份'},
       {Name:'青笋烧兔',Id:13,Price:30,Unit:'份'},
-    ],
-    ItemsCount:0
+    ]
 }
 
 const cart = (state = initial, action) => {
   let record = ''
   let renew = state
-  console.log('购物车：',action)
+  console.log('cart-redux:',action)
   let args = ''
  
   switch (action.type) {
@@ -91,11 +90,9 @@ const cart = (state = initial, action) => {
         renew.Items.forEach(x=> x.Num = 0)
         break;
     }
-
     if (renew != state)
-    return updeep(renew, state)
-
-  return state
+        return updeep(renew, state)
+    return state
 }   
 
 
