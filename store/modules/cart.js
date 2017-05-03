@@ -1,4 +1,9 @@
 const updeep = require('../libs/updeep.js');
+const {
+  wrapError,
+  createError,
+  isEmpty
+} = require('../../core/common.js')
 const cartTypes = {
   ADD_TO_CART: 'ADD_TO_CART',
   PLUS_TO_CART:'PLUS_TO_CART',
@@ -7,60 +12,86 @@ const cartTypes = {
 }
 
 const initial = {
-  Items:[]
+  Items:[
+      {Name:'北欧海鲜浓汤',Id:1,Price:20,Unit:'份'},
+      {Name:'烧白',Id:2,Price:15,Unit:'份'},
+      {Name:'水煮肉片',Id:3,Price:20,Unit:'份'},
+      {Name:'剔骨肉',Id:4,Price:25,Unit:'份'},
+      {Name:'糯米桂花藕片',Id:5,Price:28,Unit:'份'},
+      {Name:'手撕鸡',Id:6,Price:30,Unit:'份'},
+      {Name:'红烧肉',Id:7,Price:26,Unit:'份'},
+      {Name:'红烧肥肠',Id:8,Price:27,Unit:'份'},
+      {Name:'辣子鸡',Id:9,Price:25,Unit:'份'},
+      {Name:'宫保鸡丁',Id:10,Price:20,Unit:'份'},
+      {Name:'爆炒腰花',Id:11,Price:28,Unit:'份'},
+      {Name:'土豆烧牛肉',Id:12,Price:35,Unit:'份'},
+      {Name:'青笋烧兔',Id:13,Price:30,Unit:'份'},
+    ],
+    ItemsCount:0
 }
 
 const cart = (state = initial, action) => {
   let record = ''
   let renew = state
   console.log('购物车：',action)
-  const args = action.args
+  let args = ''
+ 
   switch (action.type) {
     case cartTypes.ADD_TO_CART:
+        args = action.args.currentTarget.dataset.food
         record = renew.Items.find(p => p.Id === args.Id)
         console.log('ADD_TO_CART', record)
-        if(!record) {
-            renew.Items.push({
-                Id: args.Id,
-                Name: args.Name,
-                TypeId: args.TypeId,
-                Price: args.Price,
-                DiscountedPrice: args.DiscountedPrice,
-                ImageUrl: args.ImageUrl,
-                Remark: args.Remark,
-                StoreId: args.StoreId,
-                Unit: args.Unit,
-                Num: 1,
-            })
-        }else{
-            record.Num++
+        // if(!record) {
+        //     renew.Items.push({
+        //         Id: args.Id,
+        //         Name: args.Name,
+        //         TypeId: args.TypeId,
+        //         Price: args.Price,
+        //         DiscountedPrice: args.DiscountedPrice,
+        //         ImageUrl: args.ImageUrl,
+        //         Remark: args.Remark,
+        //         StoreId: args.StoreId,
+        //         Unit: args.Unit,
+        //         Num: 1,
+        //     })
+        // }else{
+        if(record){
+            if(isEmpty(record.Num)){
+                record.Num = 1
+            }else{
+                record.Num++
+            }
         }
         break;
     case cartTypes.PLUS_TO_CART:
+        args = action.args.currentTarget.dataset.food
         record = renew.Items.find(p => p.Id === args.Id)
         if(record) {
             record.Num++
         }
         break;
     case cartTypes.MINUS_FROM_CART:
+        args = action.args.currentTarget.dataset.food
         record = renew.Items.find(p => p.Id === args.Id)
-        if(record.Num > 1) {
+        if(record.Num > 0) {
             record.Num--
-        }else if(record){
-        let index = 0
-        for (var i = 0; i < renew.Items.length; i++) {
-            if(renew.Items[i].Id == args.Id){
-            index = i
-            break;
-            }
         }
-            renew.Items.splice(index,1)
-        }
+        // }else if(record){
+        // let index = 0
+        // for (var i = 0; i < renew.Items.length; i++) {
+        //     if(renew.Items[i].Id == args.Id){
+        //     index = i
+        //     break;
+        //     }
+        // }
+        //     renew.Items.splice(index,1)
+        // }
         break;
     case cartTypes.CLEAN_CART:
-        renew.Items = []
+        renew.Items.forEach(x=> x.Num = 0)
         break;
     }
+
     if (renew != state)
     return updeep(renew, state)
 

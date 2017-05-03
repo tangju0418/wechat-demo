@@ -29,7 +29,7 @@
             </view>
             <view class="right-content">
               <view class="weui-cells weui-cells_after-title weui-cells-right">
-                <view class="weui-cell right-cell" wx:for="{{products}}" wx:key="*this">
+                <view class="weui-cell right-cell" wx:for="{{cart}}" wx:key="*this">
                   <view class="weui-cell__hd">
                     <image class="food-img" src="{{userInfo.avatarUrl}}"></image>
                   </view>
@@ -39,8 +39,8 @@
                     <view class="weui-cell-p">¥{{item.Price}}<text class="weui-cell-q">/份</text></view>
                   </view>
                   <view class="icon-content">
-                    <text class="iconfont icon-jianhao" wx:if="{{item.Num>0}}"></text>
-                    <text class="iconfont icon-num">{{item.Num}}</text>
+                    <text class="iconfont icon-jianhao" data-food="{{item}}" wx:if="{{item.Num>0}}" bindtap="minusFromCart"></text>
+                    <text class="iconfont icon-num" wx:if="{{item.Num>0}}">{{item.Num}}</text>
                     <text class="iconfont icon-jiahao" data-food="{{item}}" bindtap="addToCart"></text>
                   </view>
                 </view>
