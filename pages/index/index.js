@@ -4,6 +4,11 @@ const {
   connect
 } = require('../../store/index.js');
 const {
+  wrapError,
+  createError,
+  isEmpty
+} = require('../../core/common.js')
+const {
   addToCart,
   plusToCart,
   minusFromCart,
@@ -49,6 +54,7 @@ const pageConfig = {
     // ],
     currentType:1,
     currentTypeName:'',
+    currentFood:'',
     userInfo: {},
   },
   //事件处理函数
@@ -78,6 +84,40 @@ const pageConfig = {
         currentTypeName: e.currentTarget.dataset.name
     })
   },
+  showDetail:function(e){
+    console.log('当前事物',e.currentTarget.dataset.food)
+    this.setData({
+        hiddenDetail: false,
+        currentFood: e.currentTarget.dataset.food
+    })
+  },
+  hiddenbox:function(){
+    this.setData({
+        hiddenDetail: true,
+    })
+  },
+  currentAddToCart(e){
+    this.addToCart(e)
+    if(isEmpty(this.data.currentFood.Num)){
+      this.data.currentFood.Num = 1
+    }else{
+      this.data.currentFood.Num = this.data.currentFood.Num + 1
+    }
+    this.setData({
+        currentFood: this.data.currentFood
+    })
+  },
+  currentMinusFromCart(e){
+    this.minusFromCart(e)
+    if(isEmpty(this.data.currentFood.Num)){
+      this.data.currentFood.Num = 1
+    }else{
+      this.data.currentFood.Num = this.data.currentFood.Num - 1
+    }
+    this.setData({
+        currentFood: this.data.currentFood
+    })
+  }
 }
 
 const mapStateToData = state => ({

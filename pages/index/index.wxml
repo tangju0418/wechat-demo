@@ -31,7 +31,7 @@
               <view class="weui-cells weui-cells_after-title weui-cells-right">
                 <view class="weui-cell right-cell" wx:for="{{cart}}" wx:key="*this">
                   <view class="weui-cell__hd">
-                    <image class="food-img" src="{{userInfo.avatarUrl}}"></image>
+                    <image class="food-img" src="{{userInfo.avatarUrl}}" bindtap="showDetail" data-food="{{item}}"></image>
                   </view>
                   <view class="weui-cell__bd">
                     <view class="weui-cell-n">{{item.Name}}</view>
@@ -77,23 +77,27 @@
   </view>
 </view>
 
-<view class="tc_bj" bindtap="hiddenbox" hidden="{{hiddenDetail}}" data-showDetail="{{hiddenDetail}}">
+<view class="tc_bj" bindtap="hiddenbox" hidden="{{hiddenDetail}}" >
 </view>
 <scroll-view scroll-y="true" class="food-detail" hidden="{{hiddenDetail}}">
   <image src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
   <view style="padding:0 26rpx;">
-    <text>红烧肉</text>
+    <text>{{currentFood.Name}}</text>
     <text class="classnames_p">月销: 1110份</text>
   </view>
   <view class="classname" style="margin:10px auto;padding:0 26rpx;">
     <text>红烧肉是热菜菜谱之一,红烧肉的烹饪技巧以砂锅为主，肥瘦相间，香甜松软，入口即化。</text>
   </view>
   <view class="classname" style="padding:0 20rpx 0 26rpx;">
-    <text style="font-size: 48rpx;color:#ff7d00;">¥38<text style="font-size: 32rpx;color:#b1b1b1;">/份</text></text>
+    <text style="font-size: 48rpx;color:#ff7d00;">¥{{currentFood.Price}}<text style="font-size: 32rpx;color:#b1b1b1;">/份</text></text>
     <view style="text-align: center;float:right">
-      <text class="iconfont icon-jianhao" bindtap="jian" data-list="{{item}}" id="{{index}}"></text>
+      <!--<text class="iconfont icon-jianhao" bindtap="jian" data-list="{{item}}" id="{{index}}"></text>
       <text style="width:70rpx;display: inline-block;text-align: center;font-size: 48rpx">1</text>
-      <text class="iconfont icon-jiahao" bindtap="jia" data-list="{{item}}" id="{{index}}"></text>
+      <text class="iconfont icon-jiahao" bindtap="jia" data-list="{{item}}" id="{{index}}"></text>-->
+
+      <text class="iconfont icon-jianhao" data-food="{{currentFood}}" wx:if="{{currentFood.Num>0}}" bindtap="currentMinusFromCart"></text>
+      <text class="iconfont icon-num" wx:if="{{currentFood.Num>0}}">{{currentFood.Num}}</text>
+      <text class="iconfont icon-jiahao" data-food="{{currentFood}}" bindtap="currentAddToCart"></text>
     </view>
 
   </view>
