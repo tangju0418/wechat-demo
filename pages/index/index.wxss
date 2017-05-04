@@ -224,3 +224,27 @@
 .total-price text{
   color:#ff5916;
 }
+.tc_bj{
+  position: fixed;
+  background-color: #000;
+  opacity: 0.3;
+  width:100%;
+  top:0;
+  bottom:0;
+  z-index:510;
+}
+.food-detail{
+  position: absolute;
+  top:70rpx;
+  max-width:84%;
+  left:0;
+  right:0;
+  margin:0 auto;
+  bottom:200rpx;
+  background-color: #fff;
+  z-index:520;
+  width:100%;
+}
+.classnames_p{
+  float: right;
+}

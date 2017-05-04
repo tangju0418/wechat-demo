@@ -15,6 +15,7 @@ const pageConfig = {
     tabs: ["点餐", "呼叫", "订单","我的"],
     activeIndex: 0,
     sliderOffset: 0,
+    hiddenDetail:true,
     lists: [
             {name:'鲁菜1',nub:1},
             {name:'鲁菜2',nub:2},
