@@ -1,4 +1,4 @@
-<template name="msgItem">
+<template name="orderlist">
   <view>
     <text> {{index}}: {{msg}} </text>
     <text> Time: {{time}} </text>

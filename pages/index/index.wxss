@@ -248,3 +248,29 @@
 .classnames_p{
   float: right;
 }
+.detail-name{
+  line-height:62rpx;
+  padding:0 26rpx;
+  position:relative;
+}
+.detail-name::after{
+  content:" ";
+  position: absolute;
+  left:24rpx;
+  right:24rpx;
+  height:2rpx;
+  bottom:0;
+  border-bottom:2rpx dotted #e6e7e7;
+}
+.icon-off{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:50rpx;
+  text-align: center;
+  z-index:520;
+}
+.icon-guanbi{
+  font-size:80rpx;
+  color:#fff;
+}
