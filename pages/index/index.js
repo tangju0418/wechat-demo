@@ -21,6 +21,7 @@ const pageConfig = {
     activeIndex: 0,
     sliderOffset: 0,
     hiddenDetail:true,
+    hiddenCart:true,
     lists: [
             {name:'鲁菜1',nub:1},
             {name:'鲁菜2',nub:2},
@@ -96,6 +97,15 @@ const pageConfig = {
         hiddenDetail: true,
     })
   },
+  showCart(){
+    const vm = this
+    if(!isEmpty(vm.data.cartItem)){
+      this.setData({
+        hiddenCart: !this.data.hiddenCart
+      })
+    }   
+  },
+
   currentAddToCart(e){
     this.addToCart(e)
     if(isEmpty(this.data.currentFood.Num)){
@@ -128,7 +138,9 @@ const mapStateToData = state => ({
   ItemsTotalPrice:
       state.cart.Items ? state.cart.Items.reduce((count, p) => {
         return count + (p.Num ? p.Num : 0)*(p.DiscountedPrice ? p.DiscountedPrice : p.Price)
-      }, 0) : 0
+      }, 0) : 0,
+  cartItem: state.cart.Items.filter(x => !isEmpty(x.Num))
+
 
 })
 
