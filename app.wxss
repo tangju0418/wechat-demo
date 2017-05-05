@@ -24,3 +24,4 @@
 .icon-jianhao:before { content: "\e622"; }
 .icon-gouwuchekongxin:before { content: "\e602"; }
 .icon-guanbi:before { content: "\e636"; }
+.icon-shanchu:before{ content:"\e600";}

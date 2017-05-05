@@ -62,6 +62,36 @@
               <view>订单为空</view>
             </view>
           </view>
+          <view class="cart_bj" bindtap="hiddenCart" hidden="{{hiddenCart}}" >
+</view>
+          <view class="shopping-cart-content" hidden="{{hiddenCart}}">
+          <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__ft">
+                  <view class="weui-cell weui-cell_access weui-cell_link" style="padding:0;background-color:#f9f4f0">
+                      <view class="weui-cell__bd shopping-bage">购物袋</view>
+                      <view class="weui-cell__ft shopping-bage">
+                        <text class="iconfont icon-shanchu"></text>
+                      清空购物袋</view>
+                  </view>
+              </view>
+            </view>
+            <view class="weui-panel food-cart-content" style="margin-top:0">
+              <view class="weui-panel__bd">
+                  <view class="weui-media-box weui-media-box_small-appmsg">
+                      <view class="weui-cells weui-cells_in-small-appmsg">
+                          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                          
+                              <view class="weui-cell__bd weui-cell_primary">
+                                  <view>文字标题</view>
+                              </view>
+                              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                          </navigator>
+                          
+                      </view>
+                  </view>
+              </view>
+          </view>
+          </view>
         </view>
 
         <!--呼叫页面-->
@@ -76,6 +106,8 @@
     </view>
   </view>
 </view>
+
+
 
 <view class="tc_bj" bindtap="hiddenbox" hidden="{{hiddenDetail}}" >
 </view>

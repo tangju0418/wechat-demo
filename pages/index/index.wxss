@@ -100,6 +100,7 @@
   width:100%;
   border-top:2rpx solid #e6e7e7;
   box-sizing:border-box;
+  z-index:10;
 }
 .left-line{
   position:absolute;
@@ -224,7 +225,7 @@
 .total-price text{
   color:#ff5916;
 }
-.tc_bj{
+.tc_bj,.cart_bj{
   position: fixed;
   background-color: #000;
   opacity: 0.3;
@@ -232,6 +233,9 @@
   top:0;
   bottom:0;
   z-index:510;
+}
+.cart_bj{
+ bottom:538rpx;
 }
 .food-detail{
   position: absolute;
@@ -273,4 +277,35 @@
 .icon-guanbi{
   font-size:80rpx;
   color:#fff;
+}
+.shopping-cart-content{
+  position: absolute;
+  width:100%;
+  height:438rpx;
+  bottom:100rpx;
+  background-color:#fff;
+}
+.food-cart-content{
+  margin-top:0;
+  position: absolute;
+  width:100%;
+  top:50rpx;
+  bottom:0;
+  overflow-y: auto;
+}
+.shopping-bage{
+  padding-left:34rpx;
+  font-size:30rpx;
+  color:#b1b1b1;
+  font-weight: bold;
+}
+.weui-cell__ft.shopping-bage{
+  padding-right:10rpx;
+}
+.icon-shanchu{
+  color:#b1b1b1;
+  font-weight: normal;
+  font-size:36rpx;
+  margin-right:-10rpx;
+
 }
