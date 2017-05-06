@@ -99,11 +99,13 @@ const pageConfig = {
   },
   showCart(){
     const vm = this
-    if(!isEmpty(vm.data.cartItem)){
+    if(isEmpty(vm.data.cartItem) && this.data.hiddenCart){
+      return;
+    }else{
       this.setData({
         hiddenCart: !this.data.hiddenCart
       })
-    }   
+    }
   },
 
   currentAddToCart(e){
@@ -148,7 +150,7 @@ const mapDispatchToPage = dispatch => ({
   addToCart: (args) => dispatch(addToCart(args)),
   plusToCart: (args) => dispatch(plusToCart(args)),
   minusFromCart: (args) => dispatch(minusFromCart(args)),
-  cleanCart: () => dispatch(cleanCart)
+  cleanCart: () => dispatch(cleanCart())
 })
 
 const nextPageConfig = connect(mapStateToData, mapDispatchToPage)(pageConfig)

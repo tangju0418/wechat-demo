@@ -62,14 +62,14 @@
               <view>订单为空</view>
             </view>
           </view>
-          <view class="cart_bj" bindtap="hiddenCart" hidden="{{hiddenCart}}" >
+          <view class="cart_bj" bindtap="hiddenCart" hidden="{{hiddenCart}}" bindtap="showCart">
 </view>
           <view class="shopping-cart-content" hidden="{{hiddenCart}}">
           <view class="weui-panel weui-panel_access">
             <view class="weui-panel__ft">
                   <view class="weui-cell weui-cell_access weui-cell_link" style="padding:0;background-color:#f9f4f0">
                       <view class="weui-cell__bd shopping-bage">购物袋</view>
-                      <view class="weui-cell__ft shopping-bage">
+                      <view class="weui-cell__ft shopping-bage" bindtap="cleanCart">
                         <text class="iconfont icon-shanchu"></text>
                       清空购物袋</view>
                   </view>
