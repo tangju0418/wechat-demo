@@ -307,5 +307,17 @@
   font-weight: normal;
   font-size:36rpx;
   margin-right:-10rpx;
-
+}
+.weui-cart-bd:last-child{
+  margin-bottom:80rpx;
+}
+.weui-food-cart{
+  height:64rpx;
+  padding: 0 0 0 34rpx;
+  font-size: 30rpx;
+  color:#4c4c4c;
+  font-weight: bold;
+}
+.weui-panel.food-cart-content:after{
+  display:none;
 }
