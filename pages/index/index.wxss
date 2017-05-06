@@ -167,6 +167,8 @@
   text-align: center;
   padding:0 10rpx;
   box-sizing: border-box;
+  color:#4c4c4c;
+  font-weight: bold;
 }
 .footer-right{
   width:210rpx;
@@ -313,11 +315,19 @@
 }
 .weui-food-cart{
   height:64rpx;
-  padding: 0 0 0 34rpx;
+  padding: 0 18rpx 0 34rpx;
   font-size: 30rpx;
   color:#4c4c4c;
   font-weight: bold;
 }
 .weui-panel.food-cart-content:after{
   display:none;
+}
+.icon-jianhao{
+  color:#fdcf86;
+}
+.cart-price{
+  font-size:30rpx;
+  padding-right:28rpx;
+  color:#4c4c4c;
 }

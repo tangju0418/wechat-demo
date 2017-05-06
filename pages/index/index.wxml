@@ -83,7 +83,12 @@
                               <view class="weui-cell__bd weui-cell_primary">
                                   <view>{{item.Name}}</view>
                               </view>
-                              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                              <view class="weui-cell__ft">
+                                <text class="cart-price">¥{{item.Price}}</text>
+                                <text class="iconfont icon-jianhao" data-food="{{item}}" wx:if="{{item.Num>0}}" bindtap="minusFromCart" style="font-size:46rpx"></text>
+      <text class="iconfont icon-num" wx:if="{{item.Num>0}}">{{item.Num}}</text>
+      <text class="iconfont icon-jiahao" data-food="{{item}}" bindtap="addToCart"  style="font-size:46rpx"></text>
+                              </view>
                           </view>  
                       </view>
                   </view>
