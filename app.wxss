@@ -26,3 +26,5 @@
 .icon-guanbi:before { content: "\e636"; }
 .icon-shanchu:before{ content:"\e600";}
 .icon-bianji:before{ content:"\e603";}
+.icon-jilu01:before{ content:"\e630";}
+.icon-guanyu:before{ content:"\e620";}

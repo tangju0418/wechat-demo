@@ -109,7 +109,7 @@
         <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
           <view class="my-content">
             <view class="weui-cells weui-cells_after-title weui-cells-right">
-              <view class="weui-cell right-cell">
+              <view class="weui-cell">
                 <view class="weui-cell__hd my-picture">
                   <image class="food-img" src="{{userInfo.avatarUrl}}"></image>
                 </view>
@@ -118,10 +118,32 @@
                   <view class="weui-cell-n" style="font-size:22rpx">问世间情为何物，直教人生死相许</view>
                 
                 </view>
-                <view class="weui-cell__ft"></view>
-                  <text class="iconfont icon-bianji"></text>
+                <view class="weui-cell__ft"><text class="iconfont icon-bianji"></text></view>
+                  
               </view>
             </view>
+            <view class="weui-cells weui-cells_after-title weui-cells-right">
+              <navigator class="weui-cell profile-cell">
+                 <view class="weui-cell__hd">
+                  <text class="iconfont icon-jilu01"></text>
+                </view>
+                <view class="weui-cell__bd" style="margin:0">
+                  <view class="weui-cell-n">账单记录</view>               
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </navigator>
+
+               <navigator class="weui-cell profile-cell">
+                 <view class="weui-cell__hd">
+                  <text class="iconfont icon-guanyu"></text>
+                </view>
+                <view class="weui-cell__bd" style="margin:0">
+                  <view class="weui-cell-n">关于</view>               
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </navigator>
+
+            </view>   
           </view>
         </view>
       </view>

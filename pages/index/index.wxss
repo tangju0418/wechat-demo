@@ -340,10 +340,18 @@
 .my-content .weui-cells{
   margin: 99rpx 25rpx 53rpx;
   border-radius: 15rpx;
+  border:2rpx solid #e6e7e7;
+  background-color:#fff;
 }
-.my-content .weui-cells .weui-cell{
+.my-content .weui-cell{
   border-radius: 15rpx;
   height:118rpx;
+  padding:0;
+}
+.profile-cell:before{
+  left:25rpx;
+  right:25rpx;
+  border-top:2rpx dotted #dbdbdb;
 }
 .my-picture{
   position:absolute; 
@@ -363,4 +371,11 @@
   margin-right:30rpx;
   color:#b7b7b7;
   font-size:50rpx;
+}
+.icon-jilu01,.icon-guanyu{
+  padding: 0 30rpx;
+}
+.weui-cell__ft_in-access{
+  margin-right:30rpx;
+  color:#b7b7b7;
 }
