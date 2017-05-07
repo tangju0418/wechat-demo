@@ -331,3 +331,36 @@
   padding-right:28rpx;
   color:#4c4c4c;
 }
+.my-content{
+  position: absolute;
+  width:100%;
+  height:100%;
+  background-color:#f9f4f0;
+}
+.my-content .weui-cells{
+  margin: 99rpx 25rpx 53rpx;
+  border-radius: 15rpx;
+}
+.my-content .weui-cells .weui-cell{
+  border-radius: 15rpx;
+  height:118rpx;
+}
+.my-picture{
+  position:absolute; 
+}
+.my-picture image{
+  left:25rpx;
+  margin-top:-42rpx;
+  width:142rpx;
+  height:142rpx;
+  border: 6rpx solid #efefef;
+  border-radius: 50%;
+}
+.my-content .weui-cell__bd{
+  margin-left:190rpx;
+}
+.icon-bianji{
+  margin-right:30rpx;
+  color:#b7b7b7;
+  font-size:50rpx;
+}

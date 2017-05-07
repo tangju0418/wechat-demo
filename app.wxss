@@ -25,3 +25,4 @@
 .icon-gouwuchekongxin:before { content: "\e602"; }
 .icon-guanbi:before { content: "\e636"; }
 .icon-shanchu:before{ content:"\e600";}
+.icon-bianji:before{ content:"\e603";}
