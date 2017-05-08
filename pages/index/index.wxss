@@ -403,18 +403,23 @@
   line-height:60rpx;
   position: relative;
 }
-.order-time:after,.order-content .order-food-cell:last-child:after{
+.order-time:after{
   content:" ";
+  height:1rpx;
+  position:absolute;
   left:50rpx;
   right:50rpx;
-  height:1rpx;
   bottom:0;
-  position:absolute;
   border-bottom:2rpx dotted #dbdbdb;
 }
-.order-content .order-food-cell:last-child:after{
+
+.order-content .weui-cells:before{
   left:20rpx;
   right:20rpx;
+  border-top:2rpx dotted #dbdbdb;
+}
+.order-content .weui-cells:after{
+  display: none;
 }
 .order-food-cell{
   height:46rpx;
@@ -442,4 +447,19 @@
 }
 .order-content .order-food-cell:last-child{
   padding-bottom: 84rpx;
+}
+.order-left-circle,.order-right-circle{
+  width:46rpx;
+  height:46rpx;
+  border-radius:50%;
+  background-color: #f9f4f0;
+  top:37rpx;
+  position:absolute;
+  z-index:1;
+}
+.order-right-circle{
+  right:-21rpx;
+}
+.order-left-circle{
+  left:-21rpx;
 }

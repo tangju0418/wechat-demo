@@ -4,7 +4,9 @@
     <view class="order-line-box"></view>
     <view class="order-cell">
       <view class="order-time">下单时间:2017-04-12 16:55</view>
-      <view class="weui-cells weui-cells_after-title weui-cells-right">
+      <view class="order-left-circle"></view>
+      <view class="order-right-circle"></view>
+      <view class="weui-cells weui-cells_after-title weui-cells-right" style="overflow:auto;height:392rpx;">
         <view class="weui-cell order-food-cell">
           <view class="weui-cell__hd" style="width:40%;color:#b1b1b1">菜品</view>
           <view class="weui-cell__bd" style="width:20%;text-align:center;color:#b1b1b1">数量</view>
@@ -15,15 +17,40 @@
           <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
           <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
         </view>
+
         <view class="weui-cell order-food-cell">
           <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
           <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
           <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
         </view>
-   
+         <view class="weui-cell order-food-cell">
+          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
+          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
+          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
+        </view>
+         <view class="weui-cell order-food-cell">
+          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
+          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
+          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
+        </view>
+         <view class="weui-cell order-food-cell">
+          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
+          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
+          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
+        </view>
+         <view class="weui-cell order-food-cell">
+          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
+          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
+          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
+        </view>
+         <view class="weui-cell order-food-cell">
+          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
+          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
+          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
+        </view>
       </view>
-      <view class="weui-cells weui-cells_after-title weui-cells-right">
-        <view class="weui-cell" style="heihgt:60rpx;padding:0 60rpx;font-size:26rpx;line-height:60rpx;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell order-total-price" style="heihgt:60rpx;padding:0 60rpx;font-size:26rpx;line-height:60rpx;">
           <view class="weui-cell__bd" style="color:#b1b1b1">订单状态:<text style="color:#ff7d00">待付款</text></view>
           <view class="weui-cell__ft" style="color:#4c4c4c">合计：<text style="color:#ff7d00">¥198</text></view>
         </view>
