@@ -28,3 +28,9 @@
 .icon-bianji:before{ content:"\e603";}
 .icon-jilu01:before{ content:"\e630";}
 .icon-guanyu:before{ content:"\e620";}
+.icon-ic_B:before{ content:"\e601";}
+.icon-coffe:before{ content:"\e618";}
+.icon-kuaicanwaimai:before{ content:"\e68e";}
+.icon-waimaicanyin:before{ content:"\e62b";}
+.icon-nv:before{ content:"\e67e";}
+.icon-zhijin:before{ content:"\e61b";}
