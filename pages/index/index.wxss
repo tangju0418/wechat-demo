@@ -403,7 +403,7 @@
   line-height:60rpx;
   position: relative;
 }
-.order-time:after{
+.order-time:after,.order-content .order-food-cell:last-child:after{
   content:" ";
   left:50rpx;
   right:50rpx;
@@ -412,17 +412,34 @@
   position:absolute;
   border-bottom:2rpx dotted #dbdbdb;
 }
-.order-content .weui-cell{
+.order-content .order-food-cell:last-child:after{
+  left:20rpx;
+  right:20rpx;
+}
+.order-food-cell{
   height:46rpx;
   padding:0 60rpx;
   font-size:26rpx;
   color:#4c4c4c;
 }
-.order-content .weui-cell__hd{
+.order-food-cell .weui-cell__hd{
   line-height:46rpx;
   text-overflow:ellipsis;
   overflow: hidden;
+  white-space: nowrap;
 }
-.order-content .weui-cell:before{
+.order-food-cell:before{
   display: none;
+}
+.order-food-cell .weui-cell__ft text{
+  padding: 5rpx 10rpx;
+  margin-left:10rpx;
+  background-color:#fee6bf;
+  border:1rpx solid #ff7d00;
+  border-radius:40rpx;
+  line-height:40rpx;
+  color:#ff7d00;
+}
+.order-content .order-food-cell:last-child{
+  padding-bottom: 84rpx;
 }
