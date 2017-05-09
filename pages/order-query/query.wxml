@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="my-content">
+  <view class="weui-cells weui-cells_after-title weui-cells-right">
+    <view class="store-content">
+      <block wx:for="{{store}}" wx:key="*this">
+        <navigator url="/pages/index/index" class="weui-cell" >
+            <view class="weui-cell__hd">
+              <image class="food-img" src="{{userInfo.avatarUrl}}"></image>
+          </view>
+
+          <view class="weui-cell__bd">
+            <view class="weui-cell-n">{{item.name}}</view>               
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </block>
+    </view>
+  </view>  
+</view>

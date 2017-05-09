@@ -1,0 +1,31 @@
+/* index.wxss */
+.weui-cells{
+  position: absolute;
+  top:66rpx;
+  left:25rpx;
+  right:25rpx;
+  bottom:108rpx;
+  border-radius:15rpx;
+}
+.store-content{
+  position: absolute;
+  top:44rpx;
+  width:100%;
+  bottom:50rpx;
+  overflow-y: auto;
+}
+.weui-cells:after,.weui-cells:before{
+  display: none;
+}
+.my-content{
+  position: absolute;
+  width:100%;
+  height:100%;
+  background-color:#f9f4f0;
+}
+.food-img{
+  width:122rpx;
+  height:122rpx;
+  border:6rpx solid #efefef;
+  border-radius:50%;
+}
