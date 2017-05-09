@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="my-content">
   <view class="weui-cells weui-cells_after-title weui-cells-right">
+    <view class="weui-hd gray-font">账单历史</view>
     <view class="store-content">
       <block wx:for="{{store}}" wx:key="*this">
         <navigator url="/pages/index/index" class="weui-cell" >
@@ -9,7 +10,8 @@
           </view>
 
           <view class="weui-cell__bd">
-            <view class="weui-cell-n">{{item.name}}</view>               
+            <view class="weui-cell-n store-name">{{item.name}}</view>                          <view class="weui-cell-n gray-font">下单时间：2017-04-16 11:11</view>
+            <view class="weui-cell-n gray-font" style="font-size:26rpx">总价：¥199</view>   
           </view>
           <view class="weui-cell__ft weui-cell__ft_in-access"></view>
         </navigator>
