@@ -13,7 +13,7 @@
             <view class="weui-cell-n store-name">{{item.name}}</view>                          <view class="weui-cell-n gray-font">下单时间：2017-04-16 11:11</view>
             <view class="weui-cell-n gray-font" style="font-size:26rpx">总价：¥199</view>   
           </view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          <view class="weui-cell__ft"><text>已完成</text></view>
         </navigator>
       </block>
     </view>

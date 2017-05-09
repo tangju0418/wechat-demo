@@ -1,9 +1,8 @@
 {
   "pages":[
-    "pages/order-query/query",
     "pages/index/index",
-    "pages/logs/logs"
-    
+    "pages/logs/logs",
+    "pages/order-query/query"
   ],
   "window":{
     "backgroundTextStyle":"light",

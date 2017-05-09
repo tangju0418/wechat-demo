@@ -11,7 +11,7 @@
   position: absolute;
   top:44rpx;
   width:100%;
-  bottom:50rpx;
+  bottom:0;
   overflow-y: auto;
 }
 .weui-cells:after,.weui-cells:before{
@@ -37,7 +37,7 @@
   padding-left:25rpx;
   position: relative;
 }
-.weui-hd:after{
+.weui-hd:after,.weui-cell:last-child:after{
   content:" ";
   position: absolute;
   bottom:0;
@@ -65,4 +65,21 @@
   left:25rpx;
   right:25rpx;
   border-top:2rpx dotted #dbdbdb;
+}
+.weui-cell__ft {
+  margin-top:60rpx;
+
+}
+.weui-cell__ft text{
+  font-size: 22rpx;
+  line-height:22rpx;
+  color:#ff7d00;
+  padding: 5rpx 10rpx;
+  background-color: #fee6bf;
+  border:2rpx solid #ff7d00;
+  border-radius: 32rpx;
+  margin-top:30rpx;
+}
+.weui-cell:last-child{
+  margin-bottom:80rpx;
 }
