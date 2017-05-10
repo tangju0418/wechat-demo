@@ -51,4 +51,8 @@
       </view>
     </view>
   </view>
+  
+  <view class="footer">
+    <button class="primary-btn">确认订单</button>
+  </view>
 </view>
