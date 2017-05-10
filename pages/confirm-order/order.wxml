@@ -1,19 +1,54 @@
 <!--confirm-order.wxml-->
 <view class="my-content">
   <view class="weui-cells weui-cells_after-title weui-cells-right">
-    <navigator url="/pages/index/index" class="weui-hd gray-font">账单历史</navigator> 
+    <navigator url="/pages/index/index" class="weui-hd gray-font">账单历史<text>订单号：111111</text></navigator> 
     <view class="store-content">
-      <block wx:for="{{cartItem}}" wx:key="*this">
+      <block wx:for="{{cart}}" wx:key="*this">
         <view class="weui-cell" >
           
 
           <view class="weui-cell__bd">
-            <view class="weui-cell-n store-name">{{item.Name}}</view>               <view class="weui-cell-n gray-font">¥{{item.Price}}<text>/份</text></view>
-           
+            <view class="weui-cell-n store-name">{{item.Name}}</view>               <view class="weui-cell-n price">¥{{item.Price}}<text class="gray-font">/份</text></view>
+            
           </view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          <view class="weui-cell__ft">
+            <view class="icon-content">
+              <text class="iconfont icon-jianhao" data-food="{{item}}" wx:if="{{item.Num>0}}" bindtap="minusFromCart"></text>
+              <text class="iconfont icon-num" wx:if="{{item.Num>0}}">{{item.Num}}</text>
+              <text class="iconfont icon-jiahao" data-food="{{item}}" bindtap="addToCart"></text>
+            </view>
+          </view>
         </view>
       </block>
     </view>
-  </view>  
+  </view>
+
+  <view class="weui-cells weui-cells_after-title weui-cells-right total-price">
+    <view class="weui-cell">
+      <view class="weui-cell__bd store-name">总价</view>
+      <view class="weui-cell__ft price">¥{{ItemsTotalPrice}}</view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title weui-cells-right remark">
+    <view class="weui-cell">
+      <view class="weui-cell__bd store-name">用餐桌号：</view>
+      <view class="weui-cell__ft gray-font table-picker">
+        <picker bindchange="bindTableChange" value="{{tableIndex}}" range="{{table}}">{{table[tableIndex]}}</picker>
+      </view>
+
+    </view>
+    <view class="weui-cell" hidden="{{!showPicker}}">
+      <view class="weui-cell__bd store-name">备注</view>
+      <view class="weui-cell__ft gray-font table-picker">
+        <picker bindchange="bindRemarkChange" value="{{remarkIndex}}" range="{{remark}}">{{remark[remarkIndex]}}</picker>
+      </view>
+    </view>
+    <view class="weui-cell" hidden="{{showPicker}}">
+      <view class="weui-cell__bd store-name">备注</view>
+      <view class="weui-cell__ft table-picker" style="font-size:26rpx;">
+        <input type="text" class="gray-font" placeholder="请输入备注"/>
+      </view>
+    </view>
+  </view>
 </view>

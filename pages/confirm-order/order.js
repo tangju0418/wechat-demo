@@ -15,12 +15,35 @@ const {
 } = require('../../store/modules/cart.actions.js')
 const pageConfig = {
   data: {
-
+    table:['梅','兰','竹','菊'],
+    tableIndex:0,
+    remark:['少辣','多辣','少盐','多盐','不要蒜','不要香菜','输入更多'],
+    remarkIndex:0,
+    showPicker:true,
   },
   onLoad: function (options) {
     var that = this
     //调用应用实例的方法获取全局数据
    
+  },
+  bindTableChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      tableIndex: e.detail.value
+    })
+  },
+  bindRemarkChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    if (e.detail.value == 6){
+      this.setData({
+        showPicker: false
+      })
+    }else{
+      this.setData({
+        remarkIndex: e.detail.value
+      })
+    }
+    
   },
 }
 
@@ -39,10 +62,10 @@ const mapStateToData = state => ({
 })
 
 const mapDispatchToPage = dispatch => ({
-//   addToCart: (args) => dispatch(addToCart(args)),
-//   plusToCart: (args) => dispatch(plusToCart(args)),
-//   minusFromCart: (args) => dispatch(minusFromCart(args)),
-//   cleanCart: () => dispatch(cleanCart())
+  addToCart: (args) => dispatch(addToCart(args)),
+  plusToCart: (args) => dispatch(plusToCart(args)),
+  minusFromCart: (args) => dispatch(minusFromCart(args)),
+  cleanCart: () => dispatch(cleanCart())
 })
 
 const nextPageConfig = connect(mapStateToData, mapDispatchToPage)(pageConfig)

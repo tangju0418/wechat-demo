@@ -1,18 +1,7 @@
 /* index.wxss */
 .weui-cells{
-  position: absolute;
-  top:66rpx;
-  left:25rpx;
-  right:25rpx;
-  bottom:108rpx;
+  margin:68rpx 25rpx 80rpx 25rpx;
   border-radius:15rpx;
-}
-.store-content{
-  position: absolute;
-  top:44rpx;
-  width:100%;
-  bottom:50rpx;
-  overflow-y: auto;
 }
 .weui-cells:after,.weui-cells:before{
   display: none;
@@ -21,21 +10,17 @@
   position: absolute;
   width:100%;
   height:100%;
+  overflow-y: auto;
   background-color:#f9f4f0;
 }
-.food-img{
-  width:122rpx;
-  height:122rpx;
-  border:6rpx solid #efefef;
-  border-radius:50%;
-  box-sizing: border-box;
-  margin:13rpx 34rpx 13rpx 0;
-}
 .weui-hd{
-  height:44rpx;
-  line-height:44rpx;
-  padding-left:25rpx;
+  height:58rpx;
+  line-height:58rpx;
+  padding:0 25rpx;
   position: relative;
+}
+.weui-hd text{
+  float:right;
 }
 .weui-hd:after{
   content:" ";
@@ -50,11 +35,14 @@
   color:#b1b1b1;
   font-size: 22rpx;
 }
-.weui-cell{
-  padding:0 30rpx 0 30rpx;
+.price{
+  color:#ff4f09;
+  font-size:32rpx;
+  font-weight:bold;
 }
-.weui-cell__hd{
-  height:148rpx;
+.weui-cell{
+  padding:0 25rpx;
+  height:106rpx;
 }
 .store-name{
   font-size:30rpx;
@@ -65,4 +53,27 @@
   left:25rpx;
   right:25rpx;
   border-top:2rpx dotted #dbdbdb;
-}/* confirm-order.wxss */
+}
+.icon-jianhao{
+  color:#fdcf86;
+}
+.icon-num{
+  display:inline-block;
+  min-width:70rpx;
+  text-align: center;
+  padding:0 10rpx;
+  box-sizing: border-box;
+  color:#4c4c4c;
+  font-weight: bold;
+}
+.total-price .weui-cell,.remark .weui-cell{
+  height:84rpx;
+}
+.total-price{
+  margin-top:-20rpx;
+}
+.table-picker{
+  width:60%;
+  text-align: center;
+  font-size:26rpx;
+}
