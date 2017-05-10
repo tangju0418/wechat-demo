@@ -1,0 +1,68 @@
+/* index.wxss */
+.weui-cells{
+  position: absolute;
+  top:66rpx;
+  left:25rpx;
+  right:25rpx;
+  bottom:108rpx;
+  border-radius:15rpx;
+}
+.store-content{
+  position: absolute;
+  top:44rpx;
+  width:100%;
+  bottom:50rpx;
+  overflow-y: auto;
+}
+.weui-cells:after,.weui-cells:before{
+  display: none;
+}
+.my-content{
+  position: absolute;
+  width:100%;
+  height:100%;
+  background-color:#f9f4f0;
+}
+.food-img{
+  width:122rpx;
+  height:122rpx;
+  border:6rpx solid #efefef;
+  border-radius:50%;
+  box-sizing: border-box;
+  margin:13rpx 34rpx 13rpx 0;
+}
+.weui-hd{
+  height:44rpx;
+  line-height:44rpx;
+  padding-left:25rpx;
+  position: relative;
+}
+.weui-hd:after{
+  content:" ";
+  position: absolute;
+  bottom:0;
+  height:1rpx;
+  left:25rpx;
+  right:25rpx;
+  border-bottom:2rpx dotted #dbdbdb;
+}
+.gray-font{
+  color:#b1b1b1;
+  font-size: 22rpx;
+}
+.weui-cell{
+  padding:0 30rpx 0 30rpx;
+}
+.weui-cell__hd{
+  height:148rpx;
+}
+.store-name{
+  font-size:30rpx;
+  color:#4c4c4c;
+  font-weight:bold;
+}
+.weui-cell::before{
+  left:25rpx;
+  right:25rpx;
+  border-top:2rpx dotted #dbdbdb;
+}/* confirm-order.wxss */

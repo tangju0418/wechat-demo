@@ -58,9 +58,9 @@
               </view>
             </view>
             <view class="total-price">合计：<text>¥{{ItemsTotalPrice}}</text></view>
-            <view hidden="{{ItemsCount<1}}" class="footer-right">
+            <navigator url="/pages/confirm-order/order" hidden="{{ItemsCount<1}}" class="footer-right">
               <view>提交订单</view>
-            </view>
+            </navigator>
             <view hidden="{{ItemsCount>0}}" class="footer-right">
               <view>订单为空</view>
             </view>
@@ -143,7 +143,7 @@
               </view>
             </view>
             <view class="weui-cells weui-cells_after-title weui-cells-right">
-              <navigator url="/pages/order-query/query" open-type="navigate" class="weui-cell profile-cell">
+              <navigator url="/pages/order-query/index" class="weui-cell profile-cell">
                  <view class="weui-cell__hd">
                   <text class="iconfont icon-jilu01"></text>
                 </view>
@@ -153,7 +153,7 @@
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
               </navigator>
 
-               <navigator url="" class="weui-cell profile-cell">
+               <navigator url="/pages/logs/logs" open-type="navigate" class="weui-cell profile-cell">
                  <view class="weui-cell__hd">
                   <text class="iconfont icon-guanyu"></text>
                 </view>

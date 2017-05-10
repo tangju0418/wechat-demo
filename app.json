@@ -1,8 +1,11 @@
 {
   "pages":[
+    "pages/confirm-order/order",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/order-query/query"
+    "pages/order-query/query",
+    
+    "pages/logs/logs"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
