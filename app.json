@@ -1,9 +1,8 @@
 {
   "pages":[
-    "pages/confirm-order/order",
     "pages/index/index",
+    "pages/confirm-order/order",
     "pages/order-query/query",
-    
     "pages/logs/logs"
     
   ],

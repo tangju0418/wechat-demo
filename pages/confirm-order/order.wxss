@@ -69,6 +69,9 @@
 .total-price .weui-cell,.remark .weui-cell{
   height:84rpx;
 }
+.remark{
+  margin-bottom:150rpx;
+}
 .total-price{
   margin-top:-20rpx;
 }
@@ -83,4 +86,12 @@
   height:80rpx;
   color:#fff;
   font-size:34rpx;
+}
+.footer{
+  border-top:2rpx solid #dbdbdb;
+  position: fixed;
+  width:100%;
+  bottom:0;
+  z-index:2;
+  background-color:#f9f4f0;
 }

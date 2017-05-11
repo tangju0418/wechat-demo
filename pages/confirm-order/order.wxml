@@ -3,7 +3,7 @@
   <view class="weui-cells weui-cells_after-title weui-cells-right">
     <navigator url="/pages/index/index" class="weui-hd gray-font">账单历史<text>订单号：111111</text></navigator> 
     <view class="store-content">
-      <block wx:for="{{cart}}" wx:key="*this">
+      <block wx:for="{{cartItem}}" wx:key="*this">
         <view class="weui-cell" >
           
 
