@@ -7,8 +7,12 @@ const {
 const {
   cart
 } = require('./modules/cart.js')
+const {
+  order
+} = require('./modules/order.js')
 
 module.exports = combineReducers({
   identity: identity,
-  cart: cart
+  cart: cart,
+  order: order
 })
