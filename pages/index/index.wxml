@@ -120,8 +120,9 @@
 
         <!--订单页面-->
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+          <view class="classname">{{foods.length}}</view>
           <import src="../../components/orderlist.wxml"/>
-          <template is="orderlist" class="my-content"/>
+          <template is="orderlist" data="{{foods}}" class="my-content"/>
         </view>
           
 

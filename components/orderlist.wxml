@@ -12,42 +12,12 @@
           <view class="weui-cell__bd" style="width:20%;text-align:center;color:#b1b1b1">数量</view>
           <view class="weui-cell__ft" style="width:30%;text-align:left;color:#b1b1b1">金额</view>
         </view>
-        <view class="weui-cell order-food-cell">
-          <view class="weui-cell__hd" style="width:40%">德式豆兰啤酒浓汤</view>
-          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
-          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
+        <view class="weui-cell order-food-cell" wx:for="{{foods}}" wx:key="*this">
+          <view class="weui-cell__hd" style="width:40%">{{item.Name}}</view>
+          <view class="weui-cell__bd" style="width:20%;text-align:center;">{{item.Num}}</view>
+          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">{{item.Num*item.Price}}<text>已上菜</text></view>
         </view>
 
-        <view class="weui-cell order-food-cell">
-          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
-          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
-          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
-        </view>
-         <view class="weui-cell order-food-cell">
-          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
-          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
-          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
-        </view>
-         <view class="weui-cell order-food-cell">
-          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
-          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
-          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
-        </view>
-         <view class="weui-cell order-food-cell">
-          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
-          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
-          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
-        </view>
-         <view class="weui-cell order-food-cell">
-          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
-          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
-          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
-        </view>
-         <view class="weui-cell order-food-cell">
-          <view class="weui-cell__hd" style="width:40%">法式枫糖密酱</view>
-          <view class="weui-cell__bd" style="width:20%;text-align:center;">2</view>
-          <view class="weui-cell__ft" style="width:30%;text-align:left;color:#4c4c4c;">43<text>已上菜</text></view>
-        </view>
       </view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell order-total-price" style="heihgt:60rpx;padding:0 60rpx;font-size:26rpx;line-height:60rpx;">

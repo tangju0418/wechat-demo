@@ -13,6 +13,9 @@ const {
   minusFromCart,
   cleanCart
 } = require('../../store/modules/cart.actions.js')
+const {
+  addToOrder
+} = require('../../store/modules/order.actions.js')
 const pageConfig = {
   data: {
     table:['梅','兰','竹','菊'],
@@ -43,8 +46,16 @@ const pageConfig = {
         remarkIndex: e.detail.value
       })
     }
-    
   },
+  confirmOrder(e){
+    console.log('当前事物',e.currentTarget.dataset.food)
+    let food = e.currentTarget.dataset.food
+    this.addToOrder(food)
+    //this.cleanCart()
+    wx.navigateTo({
+      url: '/pages/index/index'
+    })
+  }
 }
 
 const mapStateToData = state => ({
@@ -65,7 +76,8 @@ const mapDispatchToPage = dispatch => ({
   addToCart: (args) => dispatch(addToCart(args)),
   plusToCart: (args) => dispatch(plusToCart(args)),
   minusFromCart: (args) => dispatch(minusFromCart(args)),
-  cleanCart: () => dispatch(cleanCart())
+  cleanCart: () => dispatch(cleanCart()),
+  addToOrder: (args) => dispatch(addToOrder(args))
 })
 
 const nextPageConfig = connect(mapStateToData, mapDispatchToPage)(pageConfig)

@@ -126,6 +126,7 @@ const pageConfig = {
 }
 
 const mapStateToData = state => ({
+  foods: state.order.Items,
   cart: state.cart.Items,
   ItemsCount: state.cart.Items.reduce((count, p) => {
         return count + (p.Num ? p.Num : 0)
