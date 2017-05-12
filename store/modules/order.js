@@ -9,6 +9,7 @@ const orderTypes = {
 }
 
 const initial = {
+  confirmOrder:false,
   Items:[]
 }
 
@@ -19,6 +20,7 @@ const order = (state = initial, action) => {
         let arg = action.args
         console.log('order-redux:',arg)
         renew.Items = arg
+        renew.confirmOrder = true
         break;
     }
     if (renew != state)
