@@ -51,7 +51,7 @@ const pageConfig = {
     console.log('当前事物',e.currentTarget.dataset.food)
     let food = e.currentTarget.dataset.food
     this.addToOrder(food)
-    //this.cleanCart()
+    this.cleanCart()
     wx.navigateTo({
       url: '/pages/index/index'
     })
