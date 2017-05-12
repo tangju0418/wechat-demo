@@ -122,6 +122,18 @@ const pageConfig = {
     this.setData({
         currentFood: this.data.currentFood
     })
+  },
+  commit(){
+      wx.showModal({
+        title: '提交订单',
+        content: '正在使用中',
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      })
   }
 }
 

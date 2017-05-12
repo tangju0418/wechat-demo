@@ -58,10 +58,13 @@
               </view>
             </view>
             <view class="total-price">合计：<text>¥{{ItemsTotalPrice}}</text></view>
-            <navigator url="/pages/confirm-order/order" hidden="{{ItemsCount<1 || confirmOrder}}" class="footer-right">
+            <navigator url="/pages/confirm-order/order" wx:if="{{ItemsCount>0 && !confirmOrder}}" class="footer-right">
               <view>提交订单</view>
             </navigator>
-            <view hidden="{{ItemsCount>0 && !confirmOrder}}" class="footer-right">
+            <view wx:if="{{ItemsCount>0 && confirmOrder}}" bindtap="commit" class="footer-right">
+              <view>提交订单</view>
+            </view>
+            <view hidden="{{ItemsCount>0}}" class="footer-right">
               <view>订单为空</view>
             </view>
           </view>
