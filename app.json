@@ -1,14 +1,15 @@
 {
-  "pages":[
+  "pages": [
+    "pages/scan/scan",
     "pages/index/index",
     "pages/confirm-order/order",
     "pages/order-query/query",
     "pages/logs/logs"
     
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ff7d00",
-    "navigationBarTextStyle":"white"
-  } 
+    "navigationBarTextStyle": "white"
+  }
 }
