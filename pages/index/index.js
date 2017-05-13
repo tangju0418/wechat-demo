@@ -134,6 +134,14 @@ const pageConfig = {
           }
         }
       })
+  },
+  calling(e){
+    let name = e.currentTarget.dataset.call
+    wx.showToast({
+      title: '呼叫 "'+name+'" 成功,请稍后...',
+      icon: 'success',
+      duration: 2000
+    })
   }
 }
 
