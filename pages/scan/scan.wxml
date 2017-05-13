@@ -1,2 +1,3 @@
 <!--scan.wxml-->
-<image src="../images/scan-bg.jpg" class="my-content"></image> >
+<image src="../images/scan-bg.jpg" class="my-content"></image>
+<image src="../images/scan.png" class="scan" bindtap="scan"></image>
