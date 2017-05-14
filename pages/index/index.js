@@ -146,6 +146,7 @@ const pageConfig = {
 }
 
 const mapStateToData = state => ({
+  tableNum: state.table.Num,
   foods: state.order.Items,
   confirmOrder: state.order.confirmOrder,
   cart: state.cart.Items,
