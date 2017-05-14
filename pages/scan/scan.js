@@ -14,8 +14,12 @@ Page({
     wx.scanCode({
       success: (res) => {
         console.log('scan',res)
+        wx.redirectTo({
+          url: '/pages/index/index'
+        })
       }
     })
+    
   }
 
 })
