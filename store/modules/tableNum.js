@@ -9,10 +9,10 @@ const tableTypes = {
 }
 
 const initial = {
-  Num: ''
+  Num: '2'
 }
 
-const table = (state = initial, action) => {
+const tableNum = (state = initial, action) => {
   let renew = state
   switch (action.type) {
     case tableTypes.TABLE_NUM:
@@ -29,5 +29,5 @@ const table = (state = initial, action) => {
 
 module.exports = {
   tableTypes,
-  table
+  tableNum
 }
