@@ -1,11 +1,11 @@
 
 const {
-  tableTypes
+  tableNumTypes
 } = require('./tableNum.js')
 
 const setTableNum = (args) => {
   return (dispatch, getState) => {
-    dispatch({ type: tableTypes.TABLE_NUM, args })
+    dispatch({ type: tableNumTypes.TABLE_NUM, args })
   }
 }
 

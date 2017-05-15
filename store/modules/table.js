@@ -1,19 +1,24 @@
 const updeep = require('../libs/updeep.js');
-const tableNumTypes = {
-  TABLE_NUM: 'TABLE_NUM'
+const tableTypes = {
+  TABLE: 'TABLE'
 }
 
 const initial = {
-  Num: '2'
+  Items: [
+    { Id: 1, Name: '梅'},
+    { Id: 2, Name: '兰' },
+    { Id: 3, Name: '竹' },
+    { Id: 4, Name: '菊' }
+  ]
 }
 
-const tableNum = (state = initial, action) => {
+const table = (state = initial, action) => {
   let renew = state
   switch (action.type) {
-    case tableNumTypes.TABLE_NUM:
+    case tableTypes.TABLE:
       let arg = action.args
       console.log('table-redux:', arg)
-      renew.Num = arg
+      renew.Items = arg
       break;
   }
   if (renew != state)
@@ -23,6 +28,6 @@ const tableNum = (state = initial, action) => {
 
 
 module.exports = {
-  tableNumTypes,
-  tableNum
+  tableTypes,
+  table
 }
