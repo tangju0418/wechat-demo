@@ -12,16 +12,16 @@ const pageConfig = {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
   scan(){
     const vm = this
     wx.scanCode({
       success: (res) => {
         console.log('scan',res)
-        vm.setTableNum(res)
+        vm.setTableNum(res.result)
         wx.redirectTo({
-          url: '/pages/index/index'
+          url: `/pages/index/index`
         })
       }
     }) 
