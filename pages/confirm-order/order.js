@@ -18,7 +18,6 @@ const {
 } = require('../../store/modules/order.actions.js')
 const pageConfig = {
   data: {
-    table:['梅','兰','竹','菊'],
     tableIndex:0,
     remark:['少辣','多辣','少盐','多盐','不要蒜','不要香菜','输入更多'],
     remarkIndex:0,
@@ -59,6 +58,7 @@ const pageConfig = {
 }
 
 const mapStateToData = state => ({
+  table:state.table.Items,
   cart: state.cart.Items,
   ItemsCount: state.cart.Items.reduce((count, p) => {
     return count + (p.Num ? p.Num : 0)
