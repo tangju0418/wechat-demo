@@ -146,6 +146,7 @@ const pageConfig = {
 }
 
 const mapStateToData = state => ({
+  tableName: state.table.Items.find(x => x.Id == state.tableNum.Num) ? state.table.Items.find(x => x.Id == state.tableNum.Num).Name : '',
   tableNum: state.tableNum.Num,
   foods: state.order.Items,
   confirmOrder: state.order.confirmOrder,

@@ -28,7 +28,7 @@
           </view>
           <view class="right-list">
             <view class="right-header">
-              <view class="type-name">{{tableNum}}号桌</view>
+              <view class="type-name">{{tableName}}号桌</view>
             </view>
             <view class="right-content">
               <view class="weui-cells weui-cells_after-title weui-cells-right">
