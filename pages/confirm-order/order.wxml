@@ -33,9 +33,7 @@
   <view class="weui-cells weui-cells_after-title weui-cells-right remark">
     <view class="weui-cell">
       <view class="weui-cell__bd store-name">用餐桌号：</view>
-      <view class="weui-cell__ft gray-font table-picker">
-        <picker bindchange="bindTableChange" value="{{table[tableIndex].Id}}" range="{{table}}" range-key="Name">{{table[tableIndex].Name}}</picker>
-      </view>
+      <view class="weui-cell__ft gray-font table-picker">{{tableName}}</view>
 
     </view>
     <view class="weui-cell" hidden="{{!showPicker}}">
