@@ -1,3 +1,7 @@
 <!--scan.wxml-->
 <image src="../images/scan-bg.jpg" class="my-content"></image>
-<image src="../images/scan.png" class="scan" bindtap="scan"></image>
+<view class="scan">
+  <image src="../images/scan.png" class="scan-img" bindtap="scan"></image>
+  <view>扫码获取餐厅信息</view>
+  <navigator url="/pages/index/index" redirect class="scan-text">跳过>></navigator>
+</view>

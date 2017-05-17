@@ -5,10 +5,23 @@
   height:100%;
 }
 .scan{
-  width:200rpx;
-  height:200rpx;
+  width:400rpx;
+  height:400rpx;
   position:absolute;
   z-index:2;
   top:46%;
-  left:calc(50% - 100rpx);
+  left:calc(50% - 200rpx);
+  color: #ff7d00;
+  font-size:34rpx;
+  text-align: center;
+}
+.scan-img{
+  width:200rpx;
+  height:200rpx; 
+}
+.scan-text{
+  margin-top:20rpx;
+  font-size:30rpx;
+  color:#888;
+  text-align: right;
 }
