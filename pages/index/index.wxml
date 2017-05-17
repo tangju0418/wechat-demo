@@ -15,7 +15,9 @@
 
 
         <!--点餐页面-->
-        <view class="calling-content" hidden="{{ tableName != ''}}"><view class="empty-text">餐厅信息为空</view></view>
+        <view class="calling-content" hidden="{{activeIndex != 0 || tableName != ''}}">
+          <view class="empty-text">餐厅信息为空</view>
+        </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 0 || tableName == ''}}">
           <view class="left-list">
             <view class="weui-cells weui-cells_after-title left-cells">
@@ -107,7 +109,10 @@
 
 
         <!--呼叫页面-->
-        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+        <view class="calling-content" hidden="{{activeIndex != 1 || tableName != ''}}">
+          <view class="empty-text">餐厅信息为空</view>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1 || tableName == ''}}">
           <view class="calling-content">
             <view class="weui-grids">
               <block wx:for="{{grids}}" wx:key="*this">
@@ -123,7 +128,10 @@
 
 
         <!--订单页面-->
-        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+        <view class="calling-content" hidden="{{ activeIndex != 2 || foods != ''}}">
+          <view class="empty-text">没有订单，请前往点餐页面选购</view>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 2 || foods==''}}">
           <import src="../../components/orderlist.wxml"/>
           <template is="orderlist" data="{{foods}}" class="my-content"/>
         </view>
