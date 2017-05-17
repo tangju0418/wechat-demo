@@ -15,7 +15,8 @@
 
 
         <!--点餐页面-->
-        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+        <view class="calling-content" hidden="{{ tableName != ''}}"><view class="empty-text">餐厅信息为空</view></view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 0 || tableName == ''}}">
           <view class="left-list">
             <view class="weui-cells weui-cells_after-title left-cells">
               <block wx:for="{{lists}}" wx:key="*this">     
@@ -28,7 +29,7 @@
           </view>
           <view class="right-list">
             <view class="right-header">
-              <view class="type-name">{{tableName}}号桌</view>
+              <view class="type-name">{{tableName}}</view>
             </view>
             <view class="right-content">
               <view class="weui-cells weui-cells_after-title weui-cells-right">

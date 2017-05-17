@@ -480,3 +480,9 @@
   font-weight: bold;
   font-size:36rpx;
 }
+.empty-text{
+  text-align:center;
+  margin-top:300rpx;
+  color:#ff7d00;
+  font-size:32rpx;
+}
