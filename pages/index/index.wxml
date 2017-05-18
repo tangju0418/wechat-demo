@@ -110,7 +110,8 @@
 
 
         <!--呼叫页面-->
-        <view class="calling-content" hidden="{{activeIndex != 1 || tableName != ''}}">
+        <view class="calling-content" hidden="{{activeIndex != 1 || tableName != ''}}" style="text-align:center;">
+          <image src="../images/no-foods.png" class="empty-img"></image>
           <view class="empty-text">餐厅信息为空</view>
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 1 || tableName == ''}}">
@@ -129,7 +130,8 @@
 
 
         <!--订单页面-->
-        <view class="calling-content" hidden="{{ activeIndex != 2 || foods != ''}}">
+        <view class="calling-content" hidden="{{ activeIndex != 2 || foods != ''}}" style="text-align:center;">
+          <image src="../images/no-order.png" class="empty-img"></image>
           <view class="empty-text">没有订单，请前往点餐页面选购</view>
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 2 || foods==''}}">

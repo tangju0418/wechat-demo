@@ -487,6 +487,6 @@
 }
 .empty-text{
   text-align:center;
-  color:#ff7d00;
+  color:#b1b1b1;
   font-size:32rpx;
 }

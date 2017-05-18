@@ -4,7 +4,7 @@ const tableNumTypes = {
 }
 
 const initial = {
-  Num: ''
+  Num: '2'
 }
 
 const tableNum = (state = initial, action) => {
