@@ -1,11 +1,15 @@
 const Promise = require('../libs/promise.js')
 const {
+    isEmpty,
     wrapError,
     createError
 } = require('../../core/common.js')
 const {
     apiPath
 } = require('../../core/settings.js');
+const {
+  initial
+} = require('../modules/startup.js');
 
 
 const combine = (path) => {
@@ -43,6 +47,7 @@ const getToken = (path) => {
 }
 const post = (path, data) => {
     const url = combine(path)
+    let Authorization = isEmpty(initial.AccessToken) ? 'Bearer ' : ('Bearer '+ initial.AccessToken)
     return new Promise(function (resolve, reject) {
         wx.request({
             url: url,
@@ -50,7 +55,7 @@ const post = (path, data) => {
             data: data,
             header: {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer '
+                'Authorization': Authorization
             },
             success: function (res) {
                 console.log('POST', url, res)
