@@ -1,3 +1,3 @@
 module.exports = {
-  apiPath: 'https://office.jiaedian.net/api/2.3.0'
+  apiPath: 'https://dcan.jiaedian.net/api/1.0.0'
 }

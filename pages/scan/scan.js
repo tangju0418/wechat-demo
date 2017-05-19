@@ -3,6 +3,11 @@ const { connect } = require('../../store/index.js');
 const {
   setTableNum
 } = require('../../store/modules/tableNum.actions.js')
+const {
+  getToken,
+  post
+} = require('../../store/base/http.js')
+
 const pageConfig = {
   data: {
   
@@ -19,10 +24,33 @@ const pageConfig = {
     wx.scanCode({
       success: (res) => {
         console.log('scan',res)
-        vm.setTableNum(res.result)
-        wx.redirectTo({
-          url: `/pages/index/index`
-        })
+        let info = res.result.split('&')
+        let guid = info[0].split('=')
+        let num = info[1].split('=')
+        console.log(guid[0],num[0])
+        if(guid[0]=='guid' && num[0] == 'n'){
+          vm.setTableNum(num[1])
+          let url = '/passport/get-token/'+guid[1]
+          getToken(url).then(function(response){
+            console.log('token',response)
+          })
+        }else{
+          wx.showModal({
+            title: '扫二维码',
+            content: '数据格式不正确',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }
+            }
+          })
+        }
+        
+       
+        // wx.redirectTo({
+        //   url: `/pages/index/index`
+        // })
       }
     }) 
   },
