@@ -24,19 +24,32 @@ const pageConfig = {
     wx.scanCode({
       success: (res) => {
         console.log('scan',res)
-        let info = res.result.split('&')
-        let guid = info[0].split('=')
-        let num = info[1].split('=')
-        console.log(guid[0],num[0])
-        if(guid[0]=='guid' && num[0] == 'n'){
+        let patt = /^guid=\S+&n=\d+$/g
+        if (patt.test(res.result)){
+          let info = res.result.split('&')
+          let guid = info[0].split('=')
+          let num = info[1].split('=')
+          console.log(guid[0], num[0])
+          
           vm.setTableNum(num[1])
-          let url = '/passport/get-token/'+guid[1]
-          getToken(url).then(function(response){
-            console.log('token',response)
+          let url = '/passport/get-token/' + guid[1]
+          getToken(url).then(function (response) {
+            console.log('token', response)
+            wx.redirectTo({
+              url: '/pages/index/index'
+            })
+          }).catch(function (error) {
+            console.log('错误消息', error)
+            wx.showModal({
+              title: '自动登录',
+              content: error.message,
+              showCancel: false
+            })
           })
+
         }else{
           wx.showModal({
-            title: '扫二维码',
+            title: '扫码获取信息',
             content: '数据格式不正确',
             showCancel: false,
             success: function (res) {
@@ -46,11 +59,7 @@ const pageConfig = {
             }
           })
         }
-        
-       
-        // wx.redirectTo({
-        //   url: `/pages/index/index`
-        // })
+
       }
     }) 
   },
