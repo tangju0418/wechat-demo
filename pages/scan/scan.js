@@ -1,8 +1,8 @@
 // scan.js
 const { connect } = require('../../store/index.js');
-const {
-  setTableNum
-} = require('../../store/modules/tableNum.actions.js')
+const {setTableNum} = require('../../store/modules/tableNum.actions.js')
+const {getFoods} = require('../../store/modules/cart.actions.js')
+const {setStartup} = require('../../store/modules/startup.actions.js')
 const {
   getToken,
   post
@@ -36,9 +36,15 @@ const pageConfig = {
     let url = '/passport/get-token/B3FA88B8-A893-41CE-8272-7625897AD0CA'
           getToken(url).then(function (response) {
             console.log('token', response)
-            wx.redirectTo({
-              url: '/pages/index/index'
+            vm.setStartup(response.Data.AccessToken)
+            post('foods/list', {})
+              .then(function (data) {
+               vm.getFoods(data)
             })
+       
+            // wx.redirectTo({
+            //   url: '/pages/index/index'
+            // })
           }).catch(function (error) {
             console.log('错误消息', error)
             wx.showModal({
@@ -71,7 +77,9 @@ const mapStateToData = state => ({
 })
 
 const mapDispatchToPage = dispatch => ({
-  setTableNum: (args) => dispatch(setTableNum(args))
+  setTableNum: (args) => dispatch(setTableNum(args)),
+  setStartup: (args) => dispatch(setStartup(args)),
+  getFoods: (args) => dispatch(getFoods(args))
 })
 
 const nextPageConfig = connect(mapStateToData, mapDispatchToPage)(pageConfig)

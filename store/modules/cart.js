@@ -38,7 +38,7 @@ const cart = (state = initial, action) => {
  
   switch (action.type) {
     case cartTypes.GET_FOODS:
-      args = action.args
+      args = action.args.Data
       renew.Items = args
       break;
     case cartTypes.ADD_TO_CART:
