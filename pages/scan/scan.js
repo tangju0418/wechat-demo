@@ -21,18 +21,19 @@ const pageConfig = {
   },
   scan(){
     const vm = this
-    wx.scanCode({
-      success: (res) => {
-        console.log('scan',res)
-        let patt = /^guid=\S+&n=\d+$/g
-        if (patt.test(res.result)){
-          let info = res.result.split('&')
-          let guid = info[0].split('=')
-          let num = info[1].split('=')
-          console.log(guid[0], num[0])
+    // wx.scanCode({
+    //   success: (res) => {
+    //     console.log('scan',res)
+    //     let patt = /^guid=\S+&n=\d+$/g
+    //     if (patt.test(res.result)){
+    //       let info = res.result.split('&')
+    //       let guid = info[0].split('=')
+    //       let num = info[1].split('=')
+    //       console.log(guid[0], num[0])
           
-          vm.setTableNum(num[1])
-          let url = '/passport/get-token/' + guid[1]
+    //       vm.setTableNum(num[1])
+          // let url = '/passport/get-token/' + guid[1]
+    let url = '/passport/get-token/B3FA88B8-A893-41CE-8272-7625897AD0CA'
           getToken(url).then(function (response) {
             console.log('token', response)
             wx.redirectTo({
@@ -47,21 +48,21 @@ const pageConfig = {
             })
           })
 
-        }else{
-          wx.showModal({
-            title: '扫码获取信息',
-            content: '数据格式不正确',
-            showCancel: false,
-            success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              }
-            }
-          })
-        }
+    //     }else{
+    //       wx.showModal({
+    //         title: '扫码获取信息',
+    //         content: '数据格式不正确',
+    //         showCancel: false,
+    //         success: function (res) {
+    //           if (res.confirm) {
+    //             console.log('用户点击确定')
+    //           }
+    //         }
+    //       })
+    //     }
 
-      }
-    }) 
+    //   }
+    // }) 
   },
 }
 

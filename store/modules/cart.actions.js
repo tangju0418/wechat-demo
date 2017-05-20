@@ -3,6 +3,12 @@ const {
   cartTypes
 } = require('./cart.js')
 
+const getFoods = (args) => {
+  return (dispatch, getState) => {
+    dispatch({ type: cartTypes.GET_FOODS, args })
+  }
+
+}
 const addToCart = (args) =>{
     return (dispatch, getState) => {
         dispatch({type: cartTypes.ADD_TO_CART,args})
@@ -26,6 +32,7 @@ const cleanCart = () =>{
 }
 
 module.exports = {
+  getFoods,
   addToCart,
   plusToCart,
   minusFromCart,

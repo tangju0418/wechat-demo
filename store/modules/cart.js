@@ -5,6 +5,7 @@ const {
   isEmpty
 } = require('../../core/common.js')
 const cartTypes = {
+  GET_FOODS: 'GET_FOODS',
   ADD_TO_CART: 'ADD_TO_CART',
   PLUS_TO_CART:'PLUS_TO_CART',
   MINUS_FROM_CART:'MINUS_FROM_CART',
@@ -36,24 +37,14 @@ const cart = (state = initial, action) => {
   let args = ''
  
   switch (action.type) {
+    case cartTypes.GET_FOODS:
+      args = action.args
+      renew.Items = args
+      break;
     case cartTypes.ADD_TO_CART:
         args = action.args.currentTarget.dataset.food
         record = renew.Items.find(p => p.Id === args.Id)
         console.log('ADD_TO_CART', record)
-        // if(!record) {
-        //     renew.Items.push({
-        //         Id: args.Id,
-        //         Name: args.Name,
-        //         TypeId: args.TypeId,
-        //         Price: args.Price,
-        //         DiscountedPrice: args.DiscountedPrice,
-        //         ImageUrl: args.ImageUrl,
-        //         Remark: args.Remark,
-        //         StoreId: args.StoreId,
-        //         Unit: args.Unit,
-        //         Num: 1,
-        //     })
-        // }else{
         if(record){
             if(isEmpty(record.Num)){
                 record.Num = 1
