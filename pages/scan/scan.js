@@ -3,10 +3,7 @@ const { connect } = require('../../store/index.js');
 const {setTableNum} = require('../../store/modules/tableNum.actions.js')
 const {getFoods} = require('../../store/modules/cart.actions.js')
 const {setStartup} = require('../../store/modules/startup.actions.js')
-const {
-  getToken,
-  post
-} = require('../../store/base/http.js')
+const {getToken,post} = require('../../store/base/http.js')
 
 const pageConfig = {
   data: {

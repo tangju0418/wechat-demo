@@ -1,19 +1,9 @@
 //index.js
 //获取应用实例
-const {
-  connect
-} = require('../../store/index.js');
-const {
-  wrapError,
-  createError,
-  isEmpty
-} = require('../../core/common.js')
-const {
-  addToCart,
-  plusToCart,
-  minusFromCart,
-  cleanCart
-} = require('../../store/modules/cart.actions.js')
+const {connect} = require('../../store/index.js');
+const {wrapError,createError,isEmpty} = require('../../core/common.js')
+const {addToCart,plusToCart,minusFromCart,cleanCart} = require('../../store/modules/cart.actions.js')
+const { post } = require('../../store/base/http.js')
 var app = getApp()
 const pageConfig = {
   data: {
@@ -65,6 +55,20 @@ const pageConfig = {
     that.setData({
         currentTypeName: that.data.lists[0].name
     });
+    post('food-type/list')
+    .then(function (data) {
+        that.setData({
+          lists: data.Data,
+          currentType:data.Data[0].Id
+        })
+    })
+    .catch(function (error) {
+        wx.showModal({
+          title: '类型列表',
+          content: error.message,
+          showCancel: false
+        })
+    })
   },
   tabClick: function (e) {
     this.setData({
