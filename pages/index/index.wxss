@@ -56,12 +56,17 @@
   border-top:2rpx solid #e6e7e7;
 }
 .left-cell{
+  min-heihgt:76rpx;
   font-size:30rpx;
   font-weight: bold;
   color:#4c4c4c;
   line-height:90rpx;
   padding:0 0 0 32rpx;
   background-color:#f9f4f0;
+}
+.left-cell .weui-cell__bd{
+  padding: 23rpx 0;
+  line-height: 40rpx;
 }
 .left-cell-current{
   color:#ff7d00;

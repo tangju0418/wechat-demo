@@ -25,7 +25,7 @@
               <block wx:for="{{lists}}" wx:key="*this">     
                 <view class="weui-cell left-cell {{currentType==item.Id ? 'left-cell-current' : ' '}}"  data-index="{{item.Id}}" data-name="{{item.Name}}" bindtap="selectType">
                   <view wx:if="{{currentType==item.Id}}" class="left-line"></view>
-                  <view class="weui-cell__bd" style="line-height:36rpx;padding:10rpx 0;min-height:76rpx">{{item.Name}}</view>
+                  <view class="weui-cell__bd">{{item.Name}}</view>
                 </view>
               </block>
             </view>
@@ -36,7 +36,7 @@
             </view>
             <view class="right-content">
               <view class="weui-cells weui-cells_after-title weui-cells-right">
-                <view class="weui-cell right-cell" wx:for="{{cart}}" wx:key="*this">
+                <view class="weui-cell right-cell" wx:for="{{cart}}" wx:key="*this" wx:if="{{item.TypeId == currentType}}">
                   <view class="weui-cell__hd">
                     <image class="food-img" src="{{item.ImageUrl}}" bindtap="showDetail" data-food="{{item}}"></image>
                   </view>
