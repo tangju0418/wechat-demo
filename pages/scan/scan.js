@@ -33,7 +33,7 @@ const pageConfig = {
           
     //       vm.setTableNum(num[1])
           // let url = '/passport/get-token/' + guid[1]
-    let url = '/passport/get-token/B3FA88B8-A893-41CE-8272-7625897AD0CA'
+    let url = '/passport/get-token/DDEB9EBC-A2BB-4A11-924B-A9F118B4CA34'
           getToken(url).then(function (response) {
             console.log('token', response)
             vm.setStartup(response.Data.AccessToken)
@@ -42,9 +42,9 @@ const pageConfig = {
                vm.getFoods(data)
             })
        
-            // wx.redirectTo({
-            //   url: '/pages/index/index'
-            // })
+            wx.redirectTo({
+              url: '/pages/index/index'
+            })
           }).catch(function (error) {
             console.log('错误消息', error)
             wx.showModal({

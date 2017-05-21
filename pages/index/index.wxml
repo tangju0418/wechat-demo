@@ -38,7 +38,7 @@
               <view class="weui-cells weui-cells_after-title weui-cells-right">
                 <view class="weui-cell right-cell" wx:for="{{cart}}" wx:key="*this">
                   <view class="weui-cell__hd">
-                    <image class="food-img" src="{{userInfo.avatarUrl}}" bindtap="showDetail" data-food="{{item}}"></image>
+                    <image class="food-img" src="{{item.ImageUrl}}" bindtap="showDetail" data-food="{{item}}"></image>
                   </view>
                   <view class="weui-cell__bd">
                     <view class="weui-cell-n">{{item.Name}}</view>
