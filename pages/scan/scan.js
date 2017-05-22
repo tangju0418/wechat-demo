@@ -15,27 +15,29 @@ const pageConfig = {
    */
   onLoad: function (options) {
     const vm = this
-    console.log(options)
-    let guid = options.guid
-    let num = options.n
-    if (guid != null && num != null){
-      console.log(guid, num)
-      vm.setTableNum(num)
-      let url = '/passport/get-token/' + guid
+    // console.log(options)
+    // let guid = options.guid
+    // let num = options.n
+    // if (guid != null && num != null){
+    //   console.log(guid, num)
+    //   vm.setTableNum(num)
+    //   let url = '/passport/get-token/' + guid
+      vm.setTableNum(2)
+      let url = '/passport/get-token/DDEB9EBC-A2BB-4A11-924B-A9F118B4CA34'
       vm.getData(url)
 
-    }else{
-      wx.showModal({
-        title: '自动登录',
-        content: '参数格式不正确,请重新获取餐厅信息',
-        showCancel: false,
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
-      })
-    }
+    // }else{
+    //   wx.showModal({
+    //     title: '自动登录',
+    //     content: '参数格式不正确,请重新获取餐厅信息',
+    //     showCancel: false,
+    //     success: function (res) {
+    //       if (res.confirm) {
+    //         console.log('用户点击确定')
+    //       }
+    //     }
+    //   })
+    // }
 
   
   },

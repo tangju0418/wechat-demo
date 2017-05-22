@@ -42,7 +42,7 @@
                   </view>
                   <view class="weui-cell__bd">
                     <view class="weui-cell-n">{{item.Name}}</view>
-                    <view class="weui-cell-q">月销：1347份</view>
+                    <!--<view class="weui-cell-q">月销：1347份</view>-->
                     <view class="weui-cell-p">¥{{item.Price}}<text class="weui-cell-q">/份</text></view>
                   </view>
                   <view class="icon-content">
@@ -191,15 +191,15 @@
 <view class="tc_bj" bindtap="hiddenbox" hidden="{{hiddenDetail}}" >
 </view>
 <scroll-view scroll-y="true" class="food-detail" hidden="{{hiddenDetail}}">
-  <image src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+  <image src="{{currentFood.ImageUrl}}" mode="widthFix"></image>
   <view class="detail-name weui-cell-n">
     <text>{{currentFood.Name}}</text>
-    <text class="classnames_p">月销: 1110份</text>
+    <!--<text class="classnames_p">月销: 1110份</text>-->
   </view>
-  <view class="weui-cell-n" style="margin:10px auto;padding:0 26rpx;">
+  <!--<view class="weui-cell-n" style="margin:10px auto;padding:0 26rpx;">
     <text>红烧肉是热菜菜谱之一,红烧肉的烹饪技巧以砂锅为主，肥瘦相间，香甜松软，入口即化。</text>
-  </view>
-  <view class="classname" style="padding:0 20rpx 0 26rpx;">
+  </view>-->
+  <view class="classname" style="padding:50rpx 20rpx 0 26rpx;">
     <text style="font-size: 48rpx;color:#ff7d00;font-weight:bold;">¥{{currentFood.Price}}<text style="font-size: 32rpx;color:#b1b1b1;">/份</text></text>
     <view style="text-align: center;float:right">
 
