@@ -75,19 +75,31 @@ const pageConfig = {
   },
   getData(url){
     const vm = this
+    wx.showLoading({
+      title: '加载中',
+    })
     getToken(url).then(function (response) {
       console.log('token', response)
       vm.setStartup(response.Data.AccessToken)
       post('foods/list', {})
         .then(function (data) {
           vm.getFoods(data)
+          wx.hideLoading()
         })
-
+        .catch(function (error) {
+          console.log('error', error)
+          wx.hideLoading()
+          wx.showModal({
+            title: '菜品目录',
+            content: error.message,
+            showCancel: false
+          })
+        })
       wx.redirectTo({
         url: '/pages/index/index'
       })
     }).catch(function (error) {
-      console.log('错误消息', error)
+      console.log('error', error)
       wx.showModal({
         title: '自动登录',
         content: error.message,
