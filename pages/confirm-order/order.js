@@ -38,25 +38,30 @@ const pageConfig = {
     const vm = this
     let Items = e.currentTarget.dataset.food
     // this.addToOrder(food)
-    // this.cleanCart()
-    let StoreTableId = vm.tableId
-    let Remark = vm.data.remark[vm.data.remarkIndex]
-    console.log('当前事物', StoreTableId, Items, vm.data.remarkIndex)
-    // post('/order/add', { StoreTableId, Remark, Items})
-    //   .then(function (data) {
-    //     vm.setTable(data)
-    //   })
-    //   .catch(function (error) {
-    //     console.log('error', error)
-    //     wx.showModal({
-    //       title: '提交订单',
-    //       content: error.message,
-    //       showCancel: false
-    //     })
-    //   })
-    // wx.navigateTo({
-    //   url: '/pages/index/index'
-    // })
+    let StoreTableId = e.currentTarget.dataset.tableid
+    let Remark = ''
+    if (vm.data.remarkIndex == 0){
+      Remark = ''
+    }else{
+      Remark = vm.data.remark[vm.data.remarkIndex]
+    }
+    console.log('当前事物', StoreTableId, Items, Remark)
+    post('/order/add', { StoreTableId, Remark, Items})
+      .then(function (data) {
+        vm.cleanCart()
+        wx.navigateTo({
+          url: '/pages/index/index'
+        })
+      })
+      .catch(function (error) {
+        console.log('error', error)
+        wx.showModal({
+          title: '提交订单',
+          content: error.message,
+          showCancel: false
+        })
+      })
+    
   }
 }
 

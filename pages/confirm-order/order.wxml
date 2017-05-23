@@ -51,6 +51,6 @@
   </view>
   
   <view class="footer">
-    <button class="primary-btn" data-food="{{cartItem}}" bindtap="confirmOrder">确认订单</button>
+    <button class="primary-btn" data-food="{{cartItem}}" data-tableid="{{tableId}}" bindtap="confirmOrder">确认订单</button>
   </view>
 </view>
