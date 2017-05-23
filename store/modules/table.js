@@ -16,7 +16,7 @@ const table = (state = initial, action) => {
   let renew = state
   switch (action.type) {
     case tableTypes.TABLE:
-      let arg = action.args
+      let arg = action.args.Data
       console.log('table-redux:', arg)
       renew.Items = arg
       break;

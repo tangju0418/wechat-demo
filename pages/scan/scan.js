@@ -1,5 +1,6 @@
 // scan.js
 const { connect } = require('../../store/index.js');
+const {setTable} = require('../../store/modules/table.actions.js')
 const {setTableNum} = require('../../store/modules/tableNum.actions.js')
 const {getFoods} = require('../../store/modules/cart.actions.js')
 const {setStartup} = require('../../store/modules/startup.actions.js')
@@ -22,7 +23,7 @@ const pageConfig = {
     //   console.log(guid, num)
     //   vm.setTableNum(num)
     //   let url = '/passport/get-token/' + guid
-      vm.setTableNum(2)
+      vm.setTableNum(17)
       let url = '/passport/get-token/DDEB9EBC-A2BB-4A11-924B-A9F118B4CA34'
       vm.getData(url)
 
@@ -97,6 +98,18 @@ const pageConfig = {
             showCancel: false
           })
         })
+      post('StoreTable/list', {})
+        .then(function (data) {
+          vm.setTable(data)
+        })
+        .catch(function (error) {
+          console.log('error', error)
+          wx.showModal({
+            title: '桌号目录',
+            content: error.message,
+            showCancel: false
+          })
+        })
       wx.redirectTo({
         url: '/pages/index/index'
       })
@@ -117,6 +130,7 @@ const mapStateToData = state => ({
 
 const mapDispatchToPage = dispatch => ({
   setTableNum: (args) => dispatch(setTableNum(args)),
+  setTable: (args) => dispatch(setTable(args)),
   setStartup: (args) => dispatch(setStartup(args)),
   getFoods: (args) => dispatch(getFoods(args))
 })
