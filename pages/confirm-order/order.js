@@ -1,21 +1,9 @@
 // order.js
-const {
-  connect
-} = require('../../store/index.js');
-const {
-  wrapError,
-  createError,
-  isEmpty
-} = require('../../core/common.js')
-const {
-  addToCart,
-  plusToCart,
-  minusFromCart,
-  cleanCart
-} = require('../../store/modules/cart.actions.js')
-const {
-  addToOrder
-} = require('../../store/modules/order.actions.js')
+const {connect} = require('../../store/index.js');
+const {wrapError,createError,isEmpty} = require('../../core/common.js')
+const { post} = require('../../store/base/http.js')
+const {addToCart,plusToCart,minusFromCart,cleanCart} = require('../../store/modules/cart.actions.js')
+const {addToOrder} = require('../../store/modules/order.actions.js')
 const pageConfig = {
   data: {
     tableIndex:0,
@@ -36,7 +24,7 @@ const pageConfig = {
   },
   bindRemarkChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
-    if (e.detail.value == 6){
+    if (e.detail.value == 7){
       this.setData({
         showPicker: false
       })
@@ -47,17 +35,33 @@ const pageConfig = {
     }
   },
   confirmOrder(e){
-    console.log('当前事物',e.currentTarget.dataset.food)
-    let food = e.currentTarget.dataset.food
-    this.addToOrder(food)
-    this.cleanCart()
-    wx.navigateTo({
-      url: '/pages/index/index'
-    })
+    const vm = this
+    let Items = e.currentTarget.dataset.food
+    // this.addToOrder(food)
+    // this.cleanCart()
+    let StoreTableId = vm.tableId
+    let Remark = vm.data.remark[vm.data.remarkIndex]
+    console.log('当前事物', StoreTableId, Items, vm.data.remarkIndex)
+    // post('/order/add', { StoreTableId, Remark, Items})
+    //   .then(function (data) {
+    //     vm.setTable(data)
+    //   })
+    //   .catch(function (error) {
+    //     console.log('error', error)
+    //     wx.showModal({
+    //       title: '提交订单',
+    //       content: error.message,
+    //       showCancel: false
+    //     })
+    //   })
+    // wx.navigateTo({
+    //   url: '/pages/index/index'
+    // })
   }
 }
 
 const mapStateToData = state => ({
+  tableId: state.tableNum.Num,
   tableName: state.table.Items.find(x => x.Id == state.tableNum.Num) ? state.table.Items.find(x => x.Id == state.tableNum.Num).Name : '',
   cart: state.cart.Items,
   ItemsCount: state.cart.Items.reduce((count, p) => {
